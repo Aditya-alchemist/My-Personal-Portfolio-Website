@@ -110,9 +110,10 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-- July 05, 2025: Migrated to wagmi for professional wallet integration with MetaMask only
-- July 05, 2025: Redesigned navigation bar with professional wallet display (network, balance, address in one bar)
-- July 05, 2025: Simplified wallet options to MetaMask only with proper logo display
+- July 05, 2025: Enhanced wagmi integration with multiple wallet connectors (MetaMask, WalletConnect, Coinbase, Injected)
+- July 05, 2025: Updated wallet modal to show all available wallet options with proper icons
+- July 05, 2025: Professional navigation bar displaying network, balance, and address in unified layout
+- July 05, 2025: Improved wallet connector icons with FontAwesome fallbacks for reliability
 - July 05, 2025: Removed dashboard button and NFT functionality from wallet component
 - July 05, 2025: Created Archive page matching Brittany Chiang's design with project table layout
 - July 05, 2025: Fixed email overlapping issue in contact section with proper text wrapping

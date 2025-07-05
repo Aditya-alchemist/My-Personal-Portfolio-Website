@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useBalance, useChainId } from "wagmi";
-import { metaMask } from "wagmi/connectors";
 import { formatEther } from "viem";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -9,8 +8,8 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function WalletConnect() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { address, isConnected } = useAccount();
-  const { connect } = useConnect();
+  const { address, isConnected, connector } = useAccount();
+  const { connectors, connect } = useConnect();
   const { disconnect } = useDisconnect();
   const chainId = useChainId();
   const { toast } = useToast();
@@ -35,19 +34,40 @@ export default function WalletConnect() {
     }
   };
 
-  const handleConnect = () => {
+  const getConnectorIcon = (connectorName: string) => {
+    // Return FontAwesome icons as fallback for better reliability
+    switch (connectorName.toLowerCase()) {
+      case 'metamask':
+        return "fab fa-ethereum";
+      case 'walletconnect':
+        return "fas fa-qrcode";
+      case 'coinbase wallet':
+        return "fas fa-coins";
+      case 'injected':
+        return "fas fa-wallet";
+      default:
+        return "fas fa-wallet";
+    }
+  };
+
+  const renderWalletIcon = (connectorName: string) => {
+    const iconClass = getConnectorIcon(connectorName);
+    return <i className={`${iconClass} text-[#00d4ff] text-lg`}></i>;
+  };
+
+  const handleConnect = (connectorToConnect: any) => {
     try {
-      connect({ connector: metaMask() });
+      connect({ connector: connectorToConnect });
       setIsModalOpen(false);
       toast({
         title: "Wallet Connected",
-        description: "Successfully connected to MetaMask",
+        description: `Successfully connected to ${connectorToConnect.name}`,
       });
     } catch (error) {
       console.error("Failed to connect wallet:", error);
       toast({
         title: "Connection Failed",
-        description: "Please make sure MetaMask is installed and unlocked.",
+        description: "Please make sure your wallet is installed and unlocked.",
         variant: "destructive",
       });
     }
@@ -90,11 +110,7 @@ export default function WalletConnect() {
           onClick={handleButtonClick}
           className="bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-300 flex items-center space-x-2"
         >
-          <img 
-            src="https://cdn.jsdelivr.net/gh/MetaMask/brand-resources@master/SVG/metamask-fox.svg" 
-            alt="MetaMask" 
-            className="w-4 h-4"
-          />
+          {renderWalletIcon(connector?.name || 'wallet')}
           <span className="hidden md:inline">
             {address ? `${address.slice(0, 6)}...${address.slice(-4)}` : "Connected"}
           </span>
@@ -110,38 +126,40 @@ export default function WalletConnect() {
         onClick={handleButtonClick}
         className="bg-[#00d4ff] hover:bg-[#00d4ff]/90 text-[#0a0a0a] font-medium px-6 py-2 rounded-lg transition-colors duration-300 flex items-center space-x-2"
       >
-        <img 
-          src="https://cdn.jsdelivr.net/gh/MetaMask/brand-resources@master/SVG/metamask-fox.svg" 
-          alt="MetaMask" 
-          className="w-4 h-4"
-        />
-        <span>Connect MetaMask</span>
+        <i className="fas fa-wallet"></i>
+        <span>Connect Wallet</span>
       </Button>
 
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="sm:max-w-md bg-[#1a1a1a] border-white/20">
           <DialogHeader>
-            <DialogTitle className="text-white text-center">Connect to MetaMask</DialogTitle>
+            <DialogTitle className="text-white text-center">Connect Wallet</DialogTitle>
           </DialogHeader>
-          <div className="space-y-4">
-            <Card
-              className="p-6 bg-[#0a0a0a] border-white/10 hover:border-[#00d4ff]/50 transition-colors cursor-pointer"
-              onClick={handleConnect}
-            >
-              <div className="flex items-center justify-center space-x-4">
-                <img 
-                  src="https://cdn.jsdelivr.net/gh/MetaMask/brand-resources@master/SVG/metamask-fox.svg" 
-                  alt="MetaMask" 
-                  className="w-8 h-8"
-                />
-                <div className="text-center">
-                  <h3 className="text-white font-semibold text-lg">MetaMask</h3>
-                  <p className="text-gray-400 text-sm">Connect using browser wallet</p>
+          <div className="space-y-3">
+            {connectors.map((connector) => (
+              <Card
+                key={connector.uid}
+                className="p-4 bg-[#0a0a0a] border-white/10 hover:border-[#00d4ff]/50 transition-colors cursor-pointer"
+                onClick={() => handleConnect(connector)}
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    {renderWalletIcon(connector.name)}
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium">{connector.name}</h3>
+                    <p className="text-gray-400 text-sm">
+                      {connector.name === 'MetaMask' && 'Browser extension wallet'}
+                      {connector.name === 'WalletConnect' && 'Mobile wallet connection'}
+                      {connector.name === 'Coinbase Wallet' && 'Coinbase wallet app'}
+                      {connector.name === 'Injected' && 'Browser wallet'}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            ))}
             <p className="text-gray-400 text-sm text-center">
-              Make sure you have MetaMask installed and unlocked in your browser.
+              Choose your preferred wallet to connect to the application.
             </p>
           </div>
         </DialogContent>
