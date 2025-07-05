@@ -16,11 +16,7 @@ export default function WalletConnect() {
     { name: "Coinbase Wallet", icon: "fas fa-coins", id: "coinbase" },
   ];
 
-  const mockTransactions = [
-    { hash: "0x1234...5678", type: "Send", amount: "-0.5 ETH", time: "2 hours ago" },
-    { hash: "0x8765...4321", type: "Receive", amount: "+1.0 ETH", time: "5 hours ago" },
-    { hash: "0x9999...1111", type: "Swap", amount: "-100 USDC", time: "1 day ago" },
-  ];
+
 
   const mockTokens = [
     { symbol: "ETH", balance: balance || "0", value: "$1,234.56" },
@@ -50,7 +46,76 @@ export default function WalletConnect() {
       case 1: return "Ethereum";
       case 137: return "Polygon";
       case 42161: return "Arbitrum";
-      default: return "Unknown";
+      case 56: return "BSC";
+      case 43114: return "Avalanche";
+      case 10: return "Optimism";
+      case 250: return "Fantom";
+      case 25: return "Cronos";
+      case 100: return "Gnosis";
+      case 1285: return "Moonriver";
+      case 1284: return "Moonbeam";
+      case 128: return "Heco";
+      case 66: return "OKExChain";
+      case 321: return "KCC";
+      case 1666600000: return "Harmony";
+      case 42220: return "Celo";
+      case 122: return "Fuse";
+      case 1313161554: return "Aurora";
+      case 2000: return "Dogechain";
+      case 1101: return "Polygon zkEVM";
+      case 324: return "zkSync Era";
+      case 59144: return "Linea";
+      case 8453: return "Base";
+      case 534352: return "Scroll";
+      case 1116: return "Core";
+      case 5000: return "Mantle";
+      case 167000: return "Taiko";
+      case 81457: return "Blast";
+      case 204: return "opBNB";
+      case 7777777: return "Zora";
+      case 34443: return "Mode";
+      case 888888888: return "Ancient8";
+      case 252: return "Fraxtal";
+      case 196: return "X1";
+      case 480: return "World Chain";
+      case 690: return "Redstone";
+      case 888: return "Wanchain";
+      case 1088: return "Metis";
+      case 2222: return "Kava";
+      case 1030: return "Conflux";
+      case 2001: return "Milkomeda";
+      case 288: return "Boba";
+      case 106: return "Velas";
+      case 40: return "Telos";
+      case 1287: return "Moonbase Alpha";
+      case 80001: return "Mumbai";
+      case 97: return "BSC Testnet";
+      case 421614: return "Arbitrum Sepolia";
+      case 11155111: return "Sepolia";
+      case 11155420: return "OP Sepolia";
+      case 84532: return "Base Sepolia";
+      case 534351: return "Scroll Sepolia";
+      case 168587773: return "Blast Sepolia";
+      case 300: return "zkSync Sepolia";
+      case 2442: return "Polygon zkEVM Testnet";
+      case 59141: return "Linea Sepolia";
+      case 5003: return "Mantle Sepolia";
+      case 167009: return "Taiko Katla";
+      case 919: return "Mode Sepolia";
+      case 28122024: return "Ancient8 Sepolia";
+      case 2522: return "Fraxtal Testnet";
+      case 195: return "X1 Testnet";
+      case 4801: return "World Chain Sepolia";
+      case 17001: return "Garnet Holesky";
+      case 17000: return "Holesky";
+      case 7668378: return "Lisk Sepolia";
+      case 1135: return "Lisk";
+      case 999999999: return "Zora Sepolia";
+      case 5: return "Goerli";
+      case 3: return "Ropsten";
+      case 4: return "Rinkeby";
+      case 42: return "Kovan";
+      default: return chainId ? `Network ${chainId}` : "Unknown Network";
     }
   };
 
@@ -122,9 +187,17 @@ export default function WalletConnect() {
       <Dialog open={isDashboardOpen} onOpenChange={setIsDashboardOpen}>
         <DialogContent className="glassmorphism border-white/10 bg-[#1a1a1a] text-white max-w-4xl">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-center">
-              Wallet Dashboard
-            </DialogTitle>
+            <div className="flex justify-between items-center">
+              <DialogTitle className="text-2xl font-bold">
+                Wallet Dashboard
+              </DialogTitle>
+              <button
+                onClick={() => setIsDashboardOpen(false)}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <i className="fas fa-times text-xl"></i>
+              </button>
+            </div>
           </DialogHeader>
           
           <div className="space-y-6">
@@ -133,7 +206,10 @@ export default function WalletConnect() {
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-lg font-semibold text-white">Wallet Address</h3>
                 <Button
-                  onClick={disconnect}
+                  onClick={() => {
+                    disconnect();
+                    setIsDashboardOpen(false);
+                  }}
                   variant="outline"
                   className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
                 >
@@ -165,41 +241,7 @@ export default function WalletConnect() {
               </div>
             </Card>
 
-            {/* Recent Transactions */}
-            <Card className="glassmorphism border-white/10 bg-[#0a0a0a] p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">Recent Transactions</h3>
-              <div className="space-y-3">
-                {mockTransactions.map((tx, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-[#1a1a1a] rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm ${
-                        tx.type === 'Send' ? 'bg-red-500/20 text-red-400' :
-                        tx.type === 'Receive' ? 'bg-green-500/20 text-green-400' :
-                        'bg-blue-500/20 text-blue-400'
-                      }`}>
-                        <i className={`fas ${
-                          tx.type === 'Send' ? 'fa-arrow-up' :
-                          tx.type === 'Receive' ? 'fa-arrow-down' :
-                          'fa-exchange-alt'
-                        }`}></i>
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold">{tx.type}</div>
-                        <div className="text-gray-400 text-sm font-mono">{tx.hash}</div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className={`font-semibold ${
-                        tx.amount.startsWith('+') ? 'text-[#39ff14]' : 'text-red-400'
-                      }`}>
-                        {tx.amount}
-                      </div>
-                      <div className="text-gray-400 text-sm">{tx.time}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
+
           </div>
         </DialogContent>
       </Dialog>
