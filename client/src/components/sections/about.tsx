@@ -3,12 +3,16 @@ import { Card } from "@/components/ui/card";
 
 export default function About() {
   const technologies = [
-    { name: "Solidity", icon: "fab fa-ethereum", color: "#00d4ff" },
-    { name: "Web3.js", icon: "fab fa-js", color: "#39ff14" },
-    { name: "React", icon: "fab fa-react", color: "#00d4ff" },
-    { name: "Node.js", icon: "fab fa-node-js", color: "#39ff14" },
-    { name: "Hardhat", icon: "fas fa-cube", color: "#8b5cf6" },
-    { name: "IPFS", icon: "fas fa-database", color: "#00d4ff" },
+    "Solidity",
+    "Web3.js", 
+    "React",
+    "Node.js",
+    "Hardhat",
+    "IPFS",
+    "TypeScript",
+    "Ethereum",
+    "Polygon",
+    "Chainlink"
   ];
 
   return (
@@ -19,52 +23,51 @@ export default function About() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="section-number">01. About</div>
+        <div className="section-number">01. About Me</div>
         <h2 className="text-4xl font-bold mb-12 text-white">About Me</h2>
         
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
+          <div className="lg:col-span-2 space-y-6">
             <p className="text-gray-400 text-lg leading-relaxed">
-              Hello! I'm Alex, a passionate blockchain developer with over 5 years of experience in the Web3 space. 
-              I specialize in building secure, scalable decentralized applications and smart contracts that power the future of finance.
+              Hello! I'm Alex, a passionate blockchain developer who enjoys creating things that live on 
+              the decentralized web. My interest in blockchain development started back in 2017 
+              when I decided to try building my first smart contract — turns out 
+              hacking together a custom DeFi protocol taught me a lot about 
+              Solidity & Web3!
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              My journey started with Bitcoin in 2017, and since then I've been deep in the rabbit hole of blockchain technology. 
-              I've worked on everything from DeFi protocols to NFT marketplaces, and I'm always excited to tackle new challenges in this rapidly evolving space.
+              Fast-forward to today, and I've had the privilege of working at{" "}
+              <span className="text-[#00d4ff]">a fintech startup</span>, <span className="text-[#00d4ff]">a DeFi protocol</span>, <span className="text-[#00d4ff]">a huge NFT marketplace</span>, and{" "}
+              <span className="text-[#00d4ff]">a blockchain consultancy</span>. My main focus these days is building 
+              accessible, secure decentralized applications and smart contracts at{" "}
+              <span className="text-[#00d4ff]">CryptoFinance</span> for a variety of clients.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              When I'm not coding, you can find me contributing to open source projects, writing technical articles, 
-              or exploring the latest developments in Layer 2 solutions and cross-chain protocols.
+              I also recently <span className="text-[#00d4ff]">launched a DeFi course</span> that covers everything you need 
+              to build a decentralized exchange with Solidity & React.
             </p>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Here are a few technologies I've been working with recently:
+            </p>
+            <div className="grid grid-cols-2 gap-2 font-mono text-sm">
+              {technologies.map((tech) => (
+                <div key={tech} className="flex items-center text-gray-400">
+                  <span className="text-[#00d4ff] mr-2">▹</span>
+                  {tech}
+                </div>
+              ))}
+            </div>
           </div>
           
-          <div className="space-y-6">
-            <div className="relative">
+          <div className="relative">
+            <div className="relative group">
               <img 
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
                 alt="Professional developer portrait" 
-                className="w-64 h-64 rounded-lg mx-auto object-cover" 
+                className="w-full h-80 rounded-lg object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 relative z-10" 
               />
-              <div className="absolute inset-0 bg-[#00d4ff]/20 rounded-lg"></div>
-            </div>
-            
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-white">Technologies I work with:</h3>
-              <div className="grid grid-cols-2 gap-3">
-                {technologies.map((tech) => (
-                  <motion.div
-                    key={tech.name}
-                    whileHover={{ scale: 1.05 }}
-                    className="glassmorphism rounded-lg p-3 text-center hover:bg-[#00d4ff]/20 transition-colors duration-300"
-                  >
-                    <i 
-                      className={`${tech.icon} mb-2`}
-                      style={{ color: tech.color }}
-                    ></i>
-                    <div className="text-sm text-gray-400">{tech.name}</div>
-                  </motion.div>
-                ))}
-              </div>
+              <div className="absolute inset-0 bg-[#00d4ff]/20 rounded-lg group-hover:bg-transparent transition-all duration-300"></div>
+              <div className="absolute inset-0 border-2 border-[#00d4ff] rounded-lg translate-x-4 translate-y-4 -z-10"></div>
             </div>
           </div>
         </div>

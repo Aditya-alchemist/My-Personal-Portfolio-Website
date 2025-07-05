@@ -29,14 +29,6 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-10">
-        <img 
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Modern developer workspace with multiple monitors" 
-          className="w-full h-full object-cover" 
-        />
-      </div>
       
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <motion.h1

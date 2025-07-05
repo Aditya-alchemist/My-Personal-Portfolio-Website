@@ -31,15 +31,13 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-8">
             <a href="#" className="font-mono text-[#00d4ff] font-semibold text-lg">
               AC
             </a>
-          </div>
-          
-          {!isMobile ? (
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
+            
+            {!isMobile && (
+              <div className="hidden md:flex items-baseline space-x-8">
                 {navItems.map((item) => (
                   <button
                     key={item.href}
@@ -50,19 +48,18 @@ export default function Navigation() {
                   </button>
                 ))}
               </div>
-            </div>
-          ) : (
-            <div className="md:hidden">
+            )}
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            {isMobile && (
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-400 hover:text-[#00d4ff]"
+                className="text-gray-400 hover:text-[#00d4ff] md:hidden"
               >
                 <i className="fas fa-bars"></i>
               </button>
-            </div>
-          )}
-          
-          <div className="flex items-center space-x-4">
+            )}
             <WalletConnect />
           </div>
         </div>
