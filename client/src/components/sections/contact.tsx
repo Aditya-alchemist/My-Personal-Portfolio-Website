@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useAccount } from "wagmi";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { useWallet } from "@/hooks/use-wallet";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -14,7 +14,7 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { address } = useWallet();
+  const { address } = useAccount();
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {

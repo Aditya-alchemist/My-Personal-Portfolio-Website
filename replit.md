@@ -110,6 +110,9 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+- July 05, 2025: Migrated to wagmi for professional wallet integration with MetaMask only
+- July 05, 2025: Redesigned navigation bar with professional wallet display (network, balance, address in one bar)
+- July 05, 2025: Simplified wallet options to MetaMask only with proper logo display
 - July 05, 2025: Removed dashboard button and NFT functionality from wallet component
 - July 05, 2025: Created Archive page matching Brittany Chiang's design with project table layout
 - July 05, 2025: Fixed email overlapping issue in contact section with proper text wrapping
@@ -117,8 +120,6 @@ Preferred communication style: Simple, everyday language.
 - July 05, 2025: Updated floating crypto background to use only specified tokens (Bitcoin, ETH, DAI, Marker, Polygon, Base, Doge, Dollar, Stellar, Starknet)
 - July 05, 2025: Created custom animated AC logo with glowing border and gradient background
 - July 05, 2025: Added Archive navigation link (05. Archive) to both desktop and mobile menus
-- July 05, 2025: Enhanced wallet support for WalletConnect and Coinbase with proper mock data
-- July 05, 2025: Enhanced network detection to support 50+ blockchain networks
 
 ## Changelog
 

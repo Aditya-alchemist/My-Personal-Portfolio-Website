@@ -92,29 +92,29 @@ export default function Navigation() {
             </motion.a>
           </div>
           
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-6">
             {!isMobile && (
-              <div className="hidden md:flex items-baseline space-x-8">
+              <div className="hidden md:flex items-baseline space-x-6">
                 {navItems.map((item) => (
                   <button
                     key={item.href}
                     onClick={() => handleNavClick(item.href)}
-                    className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300"
+                    className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 text-sm"
                   >
                     <span className="text-[#00d4ff] font-mono">{item.number}.</span> {item.label}
                   </button>
                 ))}
-                <Link href="/archive" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300">
+                <Link href="/archive" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 text-sm">
                   <span className="text-[#00d4ff] font-mono">05.</span> Archive
                 </Link>
               </div>
             )}
             
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center">
               {isMobile && (
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-gray-400 hover:text-[#00d4ff] md:hidden"
+                  className="text-gray-400 hover:text-[#00d4ff] md:hidden mr-4"
                 >
                   <i className="fas fa-bars"></i>
                 </button>
