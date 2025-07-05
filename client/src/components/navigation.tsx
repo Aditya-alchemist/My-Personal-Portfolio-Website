@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import WalletConnect from "./wallet-connect";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -13,6 +14,8 @@ export default function Navigation() {
     { href: "#projects", label: "Projects", number: "03" },
     { href: "#contact", label: "Contact", number: "04" },
   ];
+
+  const archiveItem = { href: "/archive", label: "Archive", number: "05" };
 
   const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
@@ -34,26 +37,58 @@ export default function Navigation() {
           <div className="flex items-center">
             <motion.a 
               href="#" 
-              className="font-mono text-[#00d4ff] font-semibold text-lg"
+              className="relative"
               whileHover={{ 
                 scale: 1.1,
-                textShadow: "0 0 8px #00d4ff",
                 transition: { duration: 0.2 }
               }}
-              animate={{ 
-                textShadow: [
-                  "0 0 0px #00d4ff",
-                  "0 0 4px #00d4ff",
-                  "0 0 0px #00d4ff"
-                ]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
             >
-              AC
+              <div className="relative w-12 h-12 flex items-center justify-center">
+                <motion.div 
+                  className="absolute inset-0 rounded-lg bg-gradient-to-br from-[#00d4ff] to-[#0099cc] opacity-20"
+                  animate={{
+                    opacity: [0.2, 0.4, 0.2],
+                    scale: [1, 1.05, 1]
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2,
+                    ease: "easeInOut"
+                  }}
+                />
+                <motion.div 
+                  className="relative z-10 font-mono text-[#00d4ff] font-bold text-xl"
+                  animate={{
+                    textShadow: [
+                      "0 0 4px #00d4ff",
+                      "0 0 8px #00d4ff",
+                      "0 0 4px #00d4ff"
+                    ]
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2,
+                    ease: "easeInOut"
+                  }}
+                >
+                  AC
+                </motion.div>
+                <motion.div 
+                  className="absolute inset-0 rounded-lg border border-[#00d4ff]/30"
+                  animate={{
+                    borderColor: [
+                      "rgba(0, 212, 255, 0.3)",
+                      "rgba(0, 212, 255, 0.6)",
+                      "rgba(0, 212, 255, 0.3)"
+                    ]
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2,
+                    ease: "easeInOut"
+                  }}
+                />
+              </div>
             </motion.a>
           </div>
           
@@ -69,6 +104,9 @@ export default function Navigation() {
                     <span className="text-[#00d4ff] font-mono">{item.number}.</span> {item.label}
                   </button>
                 ))}
+                <Link href="/archive" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300">
+                  <span className="text-[#00d4ff] font-mono">05.</span> Archive
+                </Link>
               </div>
             )}
             
@@ -105,6 +143,9 @@ export default function Navigation() {
                 <span className="text-[#00d4ff] font-mono">{item.number}.</span> {item.label}
               </button>
             ))}
+            <Link href="/archive" className="block w-full text-left px-3 py-2 text-gray-400 hover:text-[#00d4ff] transition-colors duration-300">
+              <span className="text-[#00d4ff] font-mono">05.</span> Archive
+            </Link>
           </div>
         </motion.div>
       )}
