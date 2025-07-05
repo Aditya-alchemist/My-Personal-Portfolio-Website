@@ -187,17 +187,9 @@ export default function WalletConnect() {
       <Dialog open={isDashboardOpen} onOpenChange={setIsDashboardOpen}>
         <DialogContent className="glassmorphism border-white/10 bg-[#1a1a1a] text-white max-w-4xl">
           <DialogHeader>
-            <div className="flex justify-between items-center">
-              <DialogTitle className="text-2xl font-bold">
-                Wallet Dashboard
-              </DialogTitle>
-              <button
-                onClick={() => setIsDashboardOpen(false)}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <i className="fas fa-times text-xl"></i>
-              </button>
-            </div>
+            <DialogTitle className="text-2xl font-bold text-center">
+              Wallet Dashboard
+            </DialogTitle>
           </DialogHeader>
           
           <div className="space-y-6">
