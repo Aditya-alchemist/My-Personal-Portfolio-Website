@@ -108,7 +108,18 @@ The application follows a monorepo structure with clear separation between clien
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+- July 05, 2025: Updated wallet dashboard to display tokens and NFTs in grid layout
+- July 05, 2025: Fixed token balance display to show actual balance and USD values
+- July 05, 2025: Enhanced wallet support for WalletConnect and Coinbase with proper mock data
+- July 05, 2025: Added success notifications for wallet connections
+- July 05, 2025: Expanded floating crypto background with 12+ token icons
+- July 05, 2025: Added glowing animation to AC logo in navigation
+- July 05, 2025: Fixed email layout in contact section to prevent text overlapping
+- July 05, 2025: Enhanced network detection to support 50+ blockchain networks
+
 ## Changelog
 
 Changelog:
-- July 05, 2025. Initial setup
+- July 05, 2025. Initial setup with Web3 portfolio and wallet integration

@@ -19,17 +19,29 @@ export default function WalletConnect() {
 
 
   const mockTokens = [
-    { symbol: "ETH", balance: balance || "0", value: "$1,234.56" },
-    { symbol: "USDC", balance: "500.00", value: "$500.00" },
-    { symbol: "LINK", balance: "25.50", value: "$382.50" },
+    { symbol: "ETH", balance: balance || "0.011", name: "Ethereum", value: "$25.43" },
+    { symbol: "USDC", balance: "0", name: "USD Coin", value: "$0.00" },
+    { symbol: "WETH", balance: "0", name: "Wrapped Ethereum", value: "$0.00" },
+    { symbol: "USDT", balance: "0", name: "Tether USD", value: "$0.00" },
+  ];
+
+  const mockNFTs = [
+    { name: "Bored Ape #1234", collection: "Bored Ape Yacht Club", image: "🐵", value: "15.2 ETH" },
+    { name: "CryptoPunk #5678", collection: "CryptoPunks", image: "👾", value: "45.0 ETH" },
+    { name: "Azuki #9012", collection: "Azuki", image: "🌸", value: "2.1 ETH" },
   ];
 
   const handleWalletConnect = async (walletId: string) => {
     try {
       await connect(walletId);
       setIsModalOpen(false);
+      // Show success notification
+      setTimeout(() => {
+        alert("🎉 Wallet connected successfully!");
+      }, 500);
     } catch (error) {
       console.error("Failed to connect wallet:", error);
+      alert("❌ Failed to connect wallet. Please make sure you have the wallet extension installed.");
     }
   };
 
@@ -212,26 +224,52 @@ export default function WalletConnect() {
               <div className="text-gray-400 text-sm mt-2">Network: {getNetworkName(chainId)}</div>
             </Card>
 
-            {/* Token Balances */}
-            <Card className="glassmorphism border-white/10 bg-[#0a0a0a] p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">Token Balances</h3>
-              <div className="space-y-3">
-                {mockTokens.map((token, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-[#1a1a1a] rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-[#00d4ff] rounded-full flex items-center justify-center text-[#0a0a0a] font-bold text-sm">
-                        {token.symbol[0]}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Token Balances */}
+              <Card className="glassmorphism border-white/10 bg-[#0a0a0a] p-6">
+                <h3 className="text-lg font-semibold text-white mb-4">Token Balances</h3>
+                <div className="space-y-3">
+                  {mockTokens.map((token, index) => (
+                    <div key={index} className="flex justify-between items-center p-3 bg-[#1a1a1a] rounded-lg">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-[#00d4ff] rounded-full flex items-center justify-center text-[#0a0a0a] font-bold text-sm">
+                          {token.symbol[0]}
+                        </div>
+                        <div>
+                          <div className="text-white font-semibold">{token.symbol}</div>
+                          <div className="text-gray-400 text-sm">{token.name}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-white font-semibold">{token.symbol}</div>
-                        <div className="text-gray-400 text-sm">{token.balance}</div>
+                      <div className="text-right">
+                        <div className="text-white font-semibold">{token.balance}</div>
+                        <div className="text-[#39ff14] text-sm">{token.value}</div>
                       </div>
                     </div>
-                    <div className="text-[#39ff14] font-semibold">{token.value}</div>
-                  </div>
-                ))}
-              </div>
-            </Card>
+                  ))}
+                </div>
+              </Card>
+
+              {/* NFT Collection */}
+              <Card className="glassmorphism border-white/10 bg-[#0a0a0a] p-6">
+                <h3 className="text-lg font-semibold text-white mb-4">NFT Collection</h3>
+                <div className="space-y-3">
+                  {mockNFTs.map((nft, index) => (
+                    <div key={index} className="flex justify-between items-center p-3 bg-[#1a1a1a] rounded-lg">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-xl">
+                          {nft.image}
+                        </div>
+                        <div>
+                          <div className="text-white font-semibold">{nft.name}</div>
+                          <div className="text-gray-400 text-sm">{nft.collection}</div>
+                        </div>
+                      </div>
+                      <div className="text-[#8b5cf6] font-semibold">{nft.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </div>
 
 
           </div>

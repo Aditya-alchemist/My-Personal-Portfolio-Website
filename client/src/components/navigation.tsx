@@ -32,9 +32,29 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="#" className="font-mono text-[#00d4ff] font-semibold text-lg">
+            <motion.a 
+              href="#" 
+              className="font-mono text-[#00d4ff] font-semibold text-lg"
+              whileHover={{ 
+                scale: 1.1,
+                textShadow: "0 0 8px #00d4ff",
+                transition: { duration: 0.2 }
+              }}
+              animate={{ 
+                textShadow: [
+                  "0 0 0px #00d4ff",
+                  "0 0 4px #00d4ff",
+                  "0 0 0px #00d4ff"
+                ]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
               AC
-            </a>
+            </motion.a>
           </div>
           
           <div className="flex items-center space-x-8">

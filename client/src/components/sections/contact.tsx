@@ -110,10 +110,10 @@ export default function Contact() {
             <div className="space-y-4">
               <a 
                 href="mailto:alex@blockchain.dev" 
-                className="flex items-center justify-center space-x-3 text-gray-400 hover:text-[#00d4ff] transition-colors duration-300"
+                className="flex items-center justify-center space-x-3 text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 break-all"
               >
-                <i className="fas fa-envelope"></i>
-                <span>alex@blockchain.dev</span>
+                <i className="fas fa-envelope flex-shrink-0"></i>
+                <span className="text-sm">alex@blockchain.dev</span>
               </a>
               <div className="flex items-center justify-center space-x-3 text-gray-400">
                 <i className="fas fa-wallet"></i>

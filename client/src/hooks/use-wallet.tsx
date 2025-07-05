@@ -51,8 +51,20 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
         } else {
           throw new Error("MetaMask not found");
         }
+      } else if (walletType === "walletconnect") {
+        // Mock WalletConnect connection
+        setAddress("0x7f21d6db0b059496ee1c0810898e35c125a714ab");
+        setChainId(137); // Polygon
+        setIsConnected(true);
+        setBalance("0.011");
+      } else if (walletType === "coinbase") {
+        // Mock Coinbase Wallet connection
+        setAddress("0x8f32e6db1c159486ff2d1920899f46d236b825bc");
+        setChainId(8453); // Base
+        setIsConnected(true);
+        setBalance("0.024");
       } else {
-        // Mock connection for other wallets
+        // Fallback for other wallets
         setAddress("0x1234567890123456789012345678901234567890");
         setChainId(1);
         setIsConnected(true);
