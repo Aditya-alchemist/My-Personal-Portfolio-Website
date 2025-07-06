@@ -14,12 +14,12 @@ export const config = createConfig({
     }),
     metaMask({
       dappMetadata: {
-        name: 'Alex Chen Portfolio',
+        name: 'Aditya kumar Mishra Portfolio',
         url: typeof window !== 'undefined' ? window.location.origin : 'https://replit.dev',
       },
     }),
     coinbaseWallet({
-      appName: 'Alex Chen Portfolio',
+      appName: 'Aditya kumar Mishra Portfolio',
       appLogoUrl: 'https://replit.dev/public/icons/favicon-196x196.png',
     }),
   ],

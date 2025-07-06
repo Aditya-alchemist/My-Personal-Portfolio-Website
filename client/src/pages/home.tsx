@@ -45,13 +45,13 @@ export default function Home() {
       </motion.main>
       
       {/* Footer */}
-      <footer className="py-12 text-center border-t border-white/20">
+      <footer className="py-12 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <p className="text-gray-400 mb-4">
             Built with passion for decentralization and a love for clean code.
           </p>
           <p className="text-gray-400 font-mono text-sm">
-            © 2024 Alex Chen. All rights reserved.
+            © 2025 Aditya kumar Mishra. All rights reserved.
           </p>
         </div>
       </footer>

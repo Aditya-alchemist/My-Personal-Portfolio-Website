@@ -29,41 +29,56 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      
+      {/* Main Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+        {/* Greeting Text */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-lg sm:text-xl text-[#00d4ff] font-mono mb-4"
+        >
+          Hi, my name is
+        </motion.p>
+
+        {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl sm:text-7xl font-bold mb-6 tracking-tight"
         >
-          <span className="text-white">Alex</span>
-          <span className="text-[#00d4ff]">Chen</span>
+          <span className="text-white">Aditya</span>{" "}
+          <span className="text-[#00d4ff]">Mishra</span>
         </motion.h1>
-        
+
+        {/* Typing Animation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="text-2xl sm:text-3xl text-gray-400 mb-8 h-12"
         >
           <span className="typing-text">{typingText}</span>
         </motion.div>
-        
+
+        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          Blockchain developer specializing in DeFi protocols, smart contracts, and Web3 infrastructure. 
-          Building the next generation of decentralized applications with cutting-edge technology.
+          Blockchain developer specializing in DeFi protocols, smart contracts,
+          and Web3 infrastructure. Focused on building reliable, secure, and
+          user-centric blockchain applications.
         </motion.p>
-        
+
+        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Button
@@ -72,41 +87,79 @@ export default function Hero() {
           >
             View My Work
           </Button>
-          <Button
-            variant="outline"
-            className="border-[#00d4ff] text-[#00d4ff] px-8 py-3 hover:bg-[#00d4ff] hover:text-[#0a0a0a] transition-all duration-300"
+          <a
+            href="images/Aditya_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Resume
-          </Button>
+            <Button
+              variant="outline"
+              className="border-[#00d4ff] text-[#00d4ff] px-8 py-3 hover:bg-[#00d4ff] hover:text-[#0a0a0a] transition-all duration-300"
+            >
+              Resume
+            </Button>
+          </a>
         </motion.div>
       </div>
-      
-      {/* Side Social Links */}
-      <div className="fixed left-10 bottom-0 z-40 hidden lg:flex flex-col items-center space-y-6">
-        <a href="#" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 hover:-translate-y-1 transform">
-          <i className="fab fa-github text-xl"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 hover:-translate-y-1 transform">
-          <i className="fab fa-twitter text-xl"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 hover:-translate-y-1 transform">
-          <i className="fab fa-linkedin text-xl"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 hover:-translate-y-1 transform">
-          <i className="fab fa-discord text-xl"></i>
-        </a>
-        <div className="w-px h-24 bg-gray-400/30"></div>
+
+      {/* Left Social Links - Brittany Chiang Style */}
+      <div className="fixed left-10 bottom-0 z-40 hidden lg:block">
+        <div className="flex flex-col items-center">
+          <div className="flex flex-col space-y-5 mb-8">
+            <a
+              href="https://github.com/Aditya-alchemist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+            >
+              <i className="fab fa-github text-xl"></i>
+            </a>
+            <a
+              href="https://x.com/Adityaalchemist?t=snsq45voDbhQVn6oe_UcWw&s=09"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+            >
+              <i className="fab fa-twitter text-xl"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aditya-kumar-mishra-alchemy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+            >
+              <i className="fab fa-linkedin text-xl"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/aditya_41205/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+            >
+              <i className="fab fa-instagram text-xl"></i>
+            </a>
+          </div>
+          <div className="w-px h-24 bg-gray-400/50"></div>
+        </div>
       </div>
-      
-      {/* Side Email */}
-      <div className="fixed right-10 bottom-0 z-40 hidden lg:flex flex-col items-center space-y-6">
-        <a 
-          href="mailto:alex@blockchain.dev" 
-          className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 hover:-translate-y-1 transform rotate-90 font-mono text-sm"
-        >
-          alex@blockchain.dev
-        </a>
-        <div className="w-px h-24 bg-gray-400/30"></div>
+
+      {/* Right Email - Brittany Chiang Style */}
+      <div className="fixed right-10 bottom-0 z-40 hidden lg:block">
+        <div className="flex flex-col items-center">
+          <div className="mb-8">
+            <a
+              href="mailto:adityakumar41205@gmail.com"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 transform hover:-translate-y-1 font-mono text-sm tracking-widest"
+              style={{
+                writingMode: 'vertical-rl',
+                textOrientation: 'mixed'
+              }}
+            >
+              adityakumar41205@gmail.com
+            </a>
+          </div>
+          <div className="w-px h-24 bg-gray-400/50"></div>
+        </div>
       </div>
     </section>
   );

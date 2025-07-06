@@ -4,37 +4,28 @@ import { Card } from "@/components/ui/card";
 export default function Experience() {
   const experiences = [
     {
-      title: "Senior Blockchain Developer",
-      company: "CryptoFinance Protocol",
-      period: "2022 - Present",
+      title: "Freelancer",
+      company: "Starknet Arcade",
+      period: "2025 may  - 2025 june",
       achievements: [
-        "Led development of a $50M+ TVL DeFi lending protocol with advanced liquidation mechanisms",
-        "Architected and deployed 15+ smart contracts across Ethereum, Polygon, and Arbitrum",
-        "Implemented comprehensive security audit process, reducing vulnerabilities by 90%",
-        "Mentored 3 junior developers in blockchain development best practices",
+        "Built fully on-chain games on StarkNet using VRF and Cartridge controllers.",
+        "Developed game logic in Cairo leveraging StarkNet’s provable computation and integrated verifiable randomness (VRF) for unpredictable outcomes",
+        " Used Cartridge controllers to implement session keys and enable gasless transactions through account abstraction",
+        "Focused on secure, composable, and user-friendly on-chain game mechanics",
       ],
     },
     {
       title: "Blockchain Developer",
-      company: "NFT Marketplace Inc",
-      period: "2020 - 2022",
+      company: "GeeksforGeeks KIIT",
+      period: "2024 - present",
       achievements: [
-        "Built and launched NFT marketplace processing 10,000+ transactions daily",
-        "Developed ERC-721 and ERC-1155 smart contracts with advanced royalty systems",
+        "Built and launched projects like  NFT marketplace and Daap on StarkNet ",
+        "Developed ERC-721 and upgradeable smart contracts ",
         "Integrated with IPFS for decentralized metadata storage",
         "Optimized gas usage, reducing transaction costs by 40%",
       ],
     },
-    {
-      title: "Full Stack Developer",
-      company: "TechStartup Solutions",
-      period: "2018 - 2020",
-      achievements: [
-        "Developed Web3 integration layer for existing Web2 applications",
-        "Created cryptocurrency payment gateway processing $2M+ in transactions",
-        "Built React-based dashboard for blockchain analytics and monitoring",
-      ],
-    },
+    
   ];
 
   return (
@@ -45,7 +36,6 @@ export default function Experience() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="section-number">02. Experience</div>
         <h2 className="text-4xl font-bold mb-12 text-white">Where I've Worked</h2>
         
         <div className="space-y-12">

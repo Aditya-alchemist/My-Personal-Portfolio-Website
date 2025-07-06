@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -18,30 +19,37 @@ export default function Contact() {
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Here you would typically send the form data to your backend
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-      
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  e.preventDefault();
+  setIsSubmitting(true);
 
+  try {
+    await emailjs.send(
+      "service_2qemd2i", // from dashboard
+      "template_66zzbon", // from dashboard
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+      "NOGb7e1UYlL9tVh4l" // from dashboard
+    );
+
+    toast({
+      title: "Message sent!",
+      description: "Thanks for reaching out. I'll get back to you soon.",
+    });
+
+    setFormData({ name: "", email: "", message: "" });
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -109,11 +117,11 @@ export default function Contact() {
             <h3 className="text-xl font-semibold text-white mb-4">Connect Directly</h3>
             <div className="space-y-4">
               <a 
-                href="mailto:alex@blockchain.dev" 
+                href="mailto:adityakumar41205@gmail.com" 
                 className="flex items-center justify-center space-x-3 text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 break-all"
               >
                 <i className="fas fa-envelope flex-shrink-0"></i>
-                <span className="text-sm">alex@blockchain.dev</span>
+                <span className="text-sm">adityakumar41205@gmail.com</span>
               </a>
               <div className="flex items-center justify-center space-x-3 text-gray-400">
                 <i className="fas fa-wallet"></i>
@@ -123,37 +131,35 @@ export default function Contact() {
               </div>
               <div className="flex justify-center space-x-4">
                 <a 
-                  href="#" 
+                  href="https://github.com/Aditya-alchemist" 
                   className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300"
                 >
                   <i className="fab fa-github text-xl"></i>
                 </a>
                 <a 
-                  href="#" 
+                  href="https://x.com/Adityaalchemist?t=snsq45voDbhQVn6oe_UcWw&s=09" 
                   className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300"
                 >
                   <i className="fab fa-twitter text-xl"></i>
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/in/aditya-kumar-mishra-alchemy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
                   className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300"
                 >
                   <i className="fab fa-linkedin text-xl"></i>
                 </a>
-                <a 
-                  href="#" 
-                  className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300"
-                >
-                  <i className="fab fa-discord text-xl"></i>
-                </a>
+             
               </div>
             </div>
           </Card>
         </div>
         
-        <Button className="bg-[#00d4ff] text-[#0a0a0a] px-8 py-3 hover:bg-[#00d4ff]/90 transition-all duration-300 hover:scale-105">
-          Let's Build Something Together
-        </Button>
+<Button 
+  onClick={() => window.open('https://calendly.com/adityakumar41205', '_blank')}
+  className="bg-[#00d4ff] text-[#0a0a0a] px-8 py-3 hover:bg-[#00d4ff]/90 transition-all duration-300 hover:scale-105"
+>
+  Schedule a Free Consultation
+</Button>
       </motion.div>
     </section>
   );

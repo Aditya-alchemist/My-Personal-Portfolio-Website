@@ -4,15 +4,17 @@ import { Card } from "@/components/ui/card";
 export default function About() {
   const technologies = [
     "Solidity",
-    "Web3.js", 
-    "React",
-    "Node.js",
-    "Hardhat",
+    "Ethers.js", 
+    "React Js",
+    "Cairo",
+    "Foundry",
     "IPFS",
-    "TypeScript",
+    "Starknet",
     "Ethereum",
-    "Polygon",
-    "Chainlink"
+    "JavaScript",
+    "Chainlink",
+    "Zkrollups",
+    "DEFI"
   ];
 
   return (
@@ -23,29 +25,29 @@ export default function About() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="section-number">01. About Me</div>
         <h2 className="text-4xl font-bold mb-12 text-white">About Me</h2>
         
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           <div className="lg:col-span-2 space-y-6">
             <p className="text-gray-400 text-lg leading-relaxed">
-              Hello! I'm Alex, a passionate blockchain developer who enjoys creating things that live on 
-              the decentralized web. My interest in blockchain development started back in 2017 
-              when I decided to try building my first smart contract — turns out 
-              hacking together a custom DeFi protocol taught me a lot about 
-              Solidity & Web3!
+              Hello! I'm Aditya, a passionate blockchain developer focused on building decentralized apps with real utility. Since 2023, I’ve been exploring smart contracts, DeFi, and zk tech. In 2025, I dove deep into StarkNet and Cairo, mastering zk-native dApps, NFT bridging, and full-stack development with Cairo contracts, custom frontends, and StarkNet.js integrations across complex Web3 projects.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              Fast-forward to today, and I've had the privilege of working at{" "}
-              <span className="text-[#00d4ff]">a fintech startup</span>, <span className="text-[#00d4ff]">a DeFi protocol</span>, <span className="text-[#00d4ff]">a huge NFT marketplace</span>, and{" "}
-              <span className="text-[#00d4ff]">a blockchain consultancy</span>. My main focus these days is building 
-              accessible, secure decentralized applications and smart contracts at{" "}
-              <span className="text-[#00d4ff]">CryptoFinance</span> for a variety of clients.
+             Fast-forward to today, and I've had the privilege of working as a{" "}
+<span className="text-[#00d4ff]">freelance Starknet developer</span>, a{" "}
+<span className="text-[#00d4ff]">Solidity developer at GeeksforGeeks KIIT</span>, collaborated on{" "}
+<span className="text-[#00d4ff]">DeFi protocols</span>, and contributed to{" "}
+<span className="text-[#00d4ff]">NFT tooling</span> and{" "}
+<span className="text-[#00d4ff]">zk dApps</span>. My main focus these days is building accessible, secure decentralized applications and smart contracts using{" "}
+<span className="text-[#00d4ff]">StarkNet</span>,{" "}
+<span className="text-[#00d4ff]">Cairo</span>, and{" "}
+<span className="text-[#00d4ff]">Solidity</span> across various ecosystems.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              I also recently <span className="text-[#00d4ff]">launched a DeFi course</span> that covers everything you need 
-              to build a decentralized exchange with Solidity & React.
-            </p>
+  I also recently <span className="text-[#00d4ff]">started writing technical blogs</span> for a publication on{" "}
+  <span className="text-[#00d4ff]">Medium</span> and <span className="text-[#00d4ff]">Dev.to</span>, sharing insights on smart contracts, zk tech, and full-stack blockchain development.
+</p>
+
             <p className="text-gray-400 text-lg leading-relaxed">
               Here are a few technologies I've been working with recently:
             </p>
@@ -62,7 +64,7 @@ export default function About() {
           <div className="relative">
             <div className="relative group">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
+                src="images/WhatsApp Image 2025-07-06 at 12.06.16_0e9a592b.jpg" 
                 alt="Professional developer portrait" 
                 className="w-full h-80 rounded-lg object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 relative z-10" 
               />

@@ -3,111 +3,130 @@ import { Link } from "wouter";
 
 const archiveProjects = [
   {
-    year: "2024",
-    title: "DeFi Yield Optimizer",
-    company: "Upstatement",
-    builtWith: ["Solidity", "React", "TypeScript", "Web3.js"],
-    link: "#",
-    external: true,
-    archived: false
-  },
-  {
-    year: "2024",
-    title: "NFT Marketplace",
-    company: "Upstatement",
-    builtWith: ["Next.js", "Ethereum", "IPFS", "TailwindCSS"],
-    link: "#",
-    external: true,
-    archived: false
-  },
-  {
-    year: "2023",
-    title: "Cross-Chain Bridge",
-    company: "Upstatement",
-    builtWith: ["Solidity", "Python", "FastAPI", "PostgreSQL"],
-    link: "#",
-    external: true,
-    archived: false
-  },
-  {
-    year: "2023",
-    title: "DAO Governance Platform",
-    company: "Freelance",
-    builtWith: ["React", "Hardhat", "Ethers.js", "Compound"],
-    link: "#",
-    external: true,
-    archived: false
-  },
-  {
-    year: "2023",
-    title: "Staking Protocol",
-    company: "Upstatement",
-    builtWith: ["Solidity", "Vue.js", "Node.js", "MongoDB"],
-    link: "#",
-    external: true,
-    archived: false
-  },
-  {
-    year: "2022",
-    title: "Flash Loan Arbitrage Bot",
+    year: "2025",
+    title: " Custom Uniswap v2 ",
     company: "Personal",
-    builtWith: ["Solidity", "Python", "Uniswap", "Aave"],
-    link: "#",
-    external: true,
+    builtWith: ["Solidity", "Foundry", "DEFI", "DEX"],
+    github: "https://github.com/Aditya-alchemist/Custom-UniswapV2",
+    live: null,
     archived: false
   },
   {
-    year: "2022",
-    title: "Liquidity Mining Dashboard",
-    company: "Upstatement",
-    builtWith: ["React", "GraphQL", "The Graph", "Styled Components"],
-    link: "#",
-    external: true,
-    archived: false
-  },
-  {
-    year: "2022",
-    title: "Multi-Sig Wallet",
-    company: "Freelance",
-    builtWith: ["Solidity", "React", "Truffle", "OpenZeppelin"],
-    link: "#",
-    external: true,
-    archived: false
-  },
-  {
-    year: "2021",
-    title: "Token Vesting Contract",
-    company: "Upstatement",
-    builtWith: ["Solidity", "Hardhat", "Ethers.js", "Chainlink"],
-    link: "#",
-    external: true,
-    archived: false
-  },
-  {
-    year: "2021",
-    title: "Prediction Market Platform",
+    year: "2025",
+    title: "PropertyNFT Marketplace ",
     company: "Personal",
-    builtWith: ["Solidity", "React", "Web3.js", "Ceramic"],
-    link: "#",
-    external: true,
+    builtWith: ["React", "Ethereum", "IPFS", "Solidity","Foundry","Ether.js","Chainlink"],
+    github: "https://github.com/Aditya-alchemist/RealEstate-Chromium-hackathon",
+    live: "https://real-estate-chromium-hackathon.vercel.app/",
     archived: false
   },
   {
-    year: "2021",
-    title: "Automated Market Maker",
+    year: "2025",
+    title: "NFT Bridge: Ethereum ↔ StarkNet",
+    company: "Personal",
+    builtWith: ["Solidity", "Cairo", "Ethereum", "Starknet"],
+    github: "https://github.com/Aditya-alchemist/Bridging-NFT-L2-L1",
+    live: null,
+    archived: false
+  },
+ 
+  {
+    year: "2025",
+    title: "Starknet Merkle Verification",
+    company: "Personal",
+    builtWith: ["Cairo", "Starknet", "Merkle Tress", "Poseidon hash"],
+    github: "https://github.com/Aditya-alchemist/Merkle-Verification-Starknet",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2025",
+    title: "StarkTweet",
+    company: "Personal",
+    builtWith: ["Cairo", "Starknet.js", "Starknet", "IPFS", "React","Pinata"],
+    github: "https://github.com/Aditya-alchemist/StarkTweet",
+    live: "https://stark-tweet.vercel.app/",
+    archived: false
+  },
+  {
+    year: "2025",
+    title: "OmniFinance",
+    company: "GeeksforGeeks KIIT",
+    builtWith: ["DEFI", "Solidity", "Foundry"],
+    github: "https://github.com/Aditya-alchemist/Omni-Finance",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2025",
+    title: "Upgradeble Smart Contract",
+    company: "GeeksforGeeks KIIT",
+    builtWith: ["Solidity", "Foundry",  "OpenZeppelin"],
+    github: "https://github.com/Aditya-alchemist/Upgradeable-smart-contracts",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2025",
+    title: "Merkle Airdrops",
     company: "Upstatement",
-    builtWith: ["Solidity", "TypeScript", "Hardhat", "Uniswap V3"],
-    link: "#",
-    external: true,
+    builtWith: ["Solidity", "Foundry", "OpenZeppelin"],
+    github: "https://github.com/Aditya-alchemist/Merkle-Airdrops",
+    live: null,
     archived: false
   },
   {
-    year: "2020",
-    title: "Decentralized Exchange",
-    company: "Freelance",
-    builtWith: ["Solidity", "React", "Redux", "MetaMask"],
-    link: "#",
-    external: true,
+    year: "2025",
+    title: "Cross-Chain Rebase Token",
+    company: "Personal",
+    builtWith: ["Solidity", "Foundry", "Chainlink", "DEFI"],
+    github: "https://github.com/Aditya-alchemist/Crosschain-Rebase-token",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2025",
+    title: "Decentralized StableCoin",
+    company: "personal",
+    builtWith: ["Solidity", "Chainlink", "DEFI", "Foundry"],
+    github: "https://github.com/Aditya-alchemist/Decentralized-Stablecoin-Protocol",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2025",
+    title: "NFT Carbon Credits",
+    company: "Bizthon Hackathon",
+    builtWith: ["Solidity", "React", "IPFS", "Ether.js"],
+    github: "https://github.com/Aditya-alchemist/Paris-blockchain-hackathon",
+    live: "https://paris-blockchain-week-frontend.vercel.app/",
+    archived: false
+  },
+  {
+    year: "2025",
+    title: "Certificate Management System",
+    company: "Research ",
+    builtWith: ["Solidity", "React", "IPFS", "Ether.js"],
+    github: "https://github.com/Aditya-alchemist/Research-project",
+    live: "https://research-project-eta.vercel.app/",
+    archived: false
+  },
+   {
+    year: "2025",
+    title: "NFT ticketing",
+    company: "Hyperthon Hackathon ",
+    builtWith: ["Solidity", "React", "IPFS", "Ether.js"],
+    github: "https://github.com/Aditya-alchemist/GFGKIIT-CRYPTOMA-HyperThon",
+    live: "https://gfgkiit-cryptoma-hyperthon.vercel.app/",
+    archived: false
+  },
+  {
+    year: "2024",
+    title: "NFT Voting",
+    company: "GeeksforGeeks KIIT ",
+    builtWith: ["Solidity", "React", "IPFS", "Ether.js"],
+    github: "https://github.com/Aditya-alchemist/NFT-VOTING-CONTEST",
+    live: "https://nft-voting-contest-gojh.vercel.app/",
     archived: false
   }
 ];
@@ -124,28 +143,50 @@ export default function Archive() {
             transition={{ duration: 0.2 }}
           >
             <i className="fas fa-arrow-left"></i>
-            <span>Alex Chen</span>
+            <span>Aditya Mishra</span>
           </motion.button>
         </Link>
       </div>
 
-      {/* Social Links */}
-      <div className="fixed left-4 bottom-4 flex flex-col space-y-4">
-        <a href="#" className="text-gray-400 hover:text-[#00d4ff] transition-colors">
-          <i className="fab fa-github text-xl"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-[#00d4ff] transition-colors">
-          <i className="fab fa-instagram text-xl"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-[#00d4ff] transition-colors">
-          <i className="fab fa-twitter text-xl"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-[#00d4ff] transition-colors">
-          <i className="fab fa-linkedin text-xl"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-[#00d4ff] transition-colors">
-          <i className="fab fa-discord text-xl"></i>
-        </a>
+      {/* Left Social Links - Brittany Chiang Style */}
+      <div className="fixed left-10 bottom-0 z-40 hidden lg:block">
+        <div className="flex flex-col items-center">
+          <div className="flex flex-col space-y-5 mb-8">
+            <a
+              href="https://github.com/Aditya-alchemist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+            >
+              <i className="fab fa-github text-xl"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/aditya_41205/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+            >
+              <i className="fab fa-instagram text-xl"></i>
+            </a>
+            <a
+              href="https://x.com/Adityaalchemist?t=snsq45voDbhQVn6oe_UcWw&s=09"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+            >
+              <i className="fab fa-twitter text-xl"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aditya-kumar-mishra-alchemy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+            >
+              <i className="fab fa-linkedin text-xl"></i>
+            </a>
+          </div>
+          <div className="w-px h-24 bg-gray-400/50"></div>
+        </div>
       </div>
 
       {/* Main Content */}
@@ -201,17 +242,25 @@ export default function Archive() {
                       </div>
                     </td>
                     <td className="py-4 px-2">
-                      <div className="flex items-center space-x-2">
-                        <a
-                          href={project.link}
-                          className="text-gray-400 hover:text-[#00d4ff] transition-colors"
-                        >
-                          <i className="fab fa-github text-lg"></i>
-                        </a>
-                        {project.external && (
+                      <div className="flex items-center space-x-3">
+                        {project.github && (
                           <a
-                            href={project.link}
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-gray-400 hover:text-[#00d4ff] transition-colors"
+                            title="View Source Code"
+                          >
+                            <i className="fab fa-github text-lg"></i>
+                          </a>
+                        )}
+                        {project.live && (
+                          <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-[#00d4ff] transition-colors"
+                            title="View Live Demo"
                           >
                             <i className="fas fa-external-link-alt text-sm"></i>
                           </a>
@@ -233,9 +282,23 @@ export default function Archive() {
         </motion.div>
       </div>
 
-      {/* Vertical Text */}
-      <div className="fixed right-4 bottom-4 writing-mode-vertical text-gray-400 text-sm font-mono">
-        alexchen.crypto.dev
+      {/* Right Email - Brittany Chiang Style */}
+      <div className="fixed right-10 bottom-0 z-40 hidden lg:block">
+        <div className="flex flex-col items-center">
+          <div className="mb-8">
+            <a
+              href="mailto:adityakumar41205@gmail.com"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 transform hover:-translate-y-1 font-mono text-sm tracking-widest"
+              style={{
+                writingMode: 'vertical-rl',
+                textOrientation: 'mixed'
+              }}
+            >
+              adityakumar41205@gmail.com
+            </a>
+          </div>
+          <div className="w-px h-24 bg-gray-400/50"></div>
+        </div>
       </div>
     </div>
   );
