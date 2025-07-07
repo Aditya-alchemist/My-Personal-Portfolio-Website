@@ -64,7 +64,7 @@ export default function About() {
           <div className="relative">
             <div className="relative group">
               <img 
-                src="ipfs://QmaqZneCS6GZ17Vs8doaWmQXzz25gKDhQJwTo7D1ZYYADc"
+                src="https://gateway.pinata.cloud/ipfs/bafkreiaqwdy5f3sdqutokssqlman4imzinygw37ysafwd44neu27usdps4"
                 alt="Professional developer portrait" 
                 className="w-full h-80 rounded-lg object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 relative z-10" 
               />

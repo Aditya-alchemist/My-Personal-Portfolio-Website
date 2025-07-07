@@ -7,7 +7,7 @@ export default function Projects() {
       title: "NFT Ticketing System",
       description:
         "This system redefines event ticketing by leveraging non-tradable NFTs, ensuring security, transparency, and fairness. Built with Solidity smart contracts and React frontend, it prevents ticket scalping and fraud while providing a seamless user experience. The system integrates with IPFS for decentralized metadata storage and uses Foundry for robust testing and deployment.",
-      image: "ipfs://QmZ1Gm86bSPg5CdWVgUQ7nexuhRcKRV1htcHdB965d2X9n",
+      image: "https://gateway.pinata.cloud/ipfs/bafybeigjixcvlk4mu7ucsk4kx2fpuxnyvfqgejuzidwbs2sjhkg6fxzwfe",
       tags: ["Solidity", "React", "Ether.js", "Pinata", "Foundry"],
       alt: "NFT Ticketing System",
       github: "https://github.com/Aditya-alchemist/GFGKIIT-CRYPTOMA-HyperThon",
@@ -17,7 +17,7 @@ export default function Projects() {
       title: "Starktweet",
       description:
         "StarkTweet is a fully on-chain, decentralized microblogging platform built on Starknet's Layer 2 solution. Users can post tweets, follow other users, and interact with content while benefiting from Starknet's low transaction costs and high throughput. The platform demonstrates the potential of Layer 2 scaling solutions for social media applications, with all data stored permanently on-chain.",
-      image: "ipfs://QmX3pKVP2SpV7uakJ5bjwQTJgLAPKefF3k6WrLAZqKus5s",
+      image: "https://gateway.pinata.cloud/ipfs/bafkreiaqkl74h2q6xgq3n6gexkmxpyxa74p7sxik2kh7upo5xpig6uahom",
       tags: ["Cairo", "Starknet", "Starknet.js", "Pinata", "React"],
       alt: "Starktweet",
       github: "https://github.com/Aditya-alchemist/StarkTweet",
@@ -27,7 +27,7 @@ export default function Projects() {
       title: "Decentralized Stablecoin Protocol",
       description:
         "The DSC Protocol is an algorithmic, overcollateralized stablecoin system designed to maintain price stability through automated mechanisms. Built with Solidity and tested using Foundry, this protocol implements liquidation mechanisms, collateral management, and price feed integration. The system ensures stability through overcollateralization and automated liquidations when positions become undercollateralized.",
-      image: "ipfs://QmUpeJvSAzZsekgmKzfjfX7UKrEgHqb8jPDGpW3wr9osD9",
+      image: "https://gateway.pinata.cloud/ipfs/bafkreidxancpklonc4caosg2hqco7vg74dlrlpit4ymbnxvfbafic4s33q",
       tags: ["Solidity", "DEFI", "Foundry"],
       alt: "Decentralized Stablecoin Protocol",
       github: "https://github.com/Aditya-alchemist/Decentralized-Stablecoin-Protocol",
