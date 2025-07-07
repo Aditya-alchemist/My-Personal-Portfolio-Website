@@ -88,7 +88,7 @@ export default function Hero() {
             View My Work
           </Button>
           <a
-            href="images/Aditya_Resume.pdf"
+            href="https://drive.google.com/file/d/1t3BDhIV_ns31rIDZzKfD08HsiAMI-JAc/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
