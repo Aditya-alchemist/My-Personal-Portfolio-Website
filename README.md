@@ -109,8 +109,8 @@ A modern, full-stack Web3 portfolio showcasing blockchain development expertise 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Aditya-alchemist/My-Personal-Portfolio-.git
-   cd My-Personal-Portfolio-
+   git clone https://github.com/Aditya-alchemist/My-Personal-Portfolio-Website.git
+   cd My-Personal-Portfolio-Website
    ```
 
 2. **Install dependencies**
