@@ -1,10 +1,10 @@
+// api/routes.ts
 import type { Express } from "express";
-import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "../shared/schema";
 import { z } from "zod";
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export function registerRoutes(app: Express): void {
   // Contact form submission
   app.post("/api/contact", async (req, res) => {
     try {
@@ -29,7 +29,4 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ error: "Internal server error" });
     }
   });
-
-  const httpServer = createServer(app);
-  return httpServer;
 }
