@@ -64,7 +64,7 @@ export default function About() {
           <div className="relative">
             <div className="relative group">
               <img 
-                src="https://drive.google.com/file/d/1g1deUOCJ1oH7gKMi6p2u4baLUC0-Cxqh/view?usp=sharing" 
+                src="ipfs://QmaqZneCS6GZ17Vs8doaWmQXzz25gKDhQJwTo7D1ZYYADc"
                 alt="Professional developer portrait" 
                 className="w-full h-80 rounded-lg object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 relative z-10" 
               />

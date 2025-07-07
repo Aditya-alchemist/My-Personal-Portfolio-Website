@@ -7,7 +7,7 @@ export default function Projects() {
       title: "NFT Ticketing System",
       description:
         "This system redefines event ticketing by leveraging non-tradable NFTs, ensuring security, transparency, and fairness. Built with Solidity smart contracts and React frontend, it prevents ticket scalping and fraud while providing a seamless user experience. The system integrates with IPFS for decentralized metadata storage and uses Foundry for robust testing and deployment.",
-      image: "https://drive.google.com/file/d/1xnBsiG3P19aiRSoXVYDFCQyjrS22jYn2/view?usp=sharing",
+      image: "ipfs://QmZ1Gm86bSPg5CdWVgUQ7nexuhRcKRV1htcHdB965d2X9n",
       tags: ["Solidity", "React", "Ether.js", "Pinata", "Foundry"],
       alt: "NFT Ticketing System",
       github: "https://github.com/Aditya-alchemist/GFGKIIT-CRYPTOMA-HyperThon",
@@ -17,7 +17,7 @@ export default function Projects() {
       title: "Starktweet",
       description:
         "StarkTweet is a fully on-chain, decentralized microblogging platform built on Starknet's Layer 2 solution. Users can post tweets, follow other users, and interact with content while benefiting from Starknet's low transaction costs and high throughput. The platform demonstrates the potential of Layer 2 scaling solutions for social media applications, with all data stored permanently on-chain.",
-      image: "https://drive.google.com/file/d/1LC4n4mi42CcwtWsw_PeNKOhRSIFK0d2l/view?usp=sharing",
+      image: "ipfs://QmX3pKVP2SpV7uakJ5bjwQTJgLAPKefF3k6WrLAZqKus5s",
       tags: ["Cairo", "Starknet", "Starknet.js", "Pinata", "React"],
       alt: "Starktweet",
       github: "https://github.com/Aditya-alchemist/StarkTweet",
@@ -27,7 +27,7 @@ export default function Projects() {
       title: "Decentralized Stablecoin Protocol",
       description:
         "The DSC Protocol is an algorithmic, overcollateralized stablecoin system designed to maintain price stability through automated mechanisms. Built with Solidity and tested using Foundry, this protocol implements liquidation mechanisms, collateral management, and price feed integration. The system ensures stability through overcollateralization and automated liquidations when positions become undercollateralized.",
-      image: "https://drive.google.com/file/d/1gho5TOaUlnFzKtDcTMZ6Ak29nc5PnJX_/view?usp=sharing",
+      image: "ipfs://QmUpeJvSAzZsekgmKzfjfX7UKrEgHqb8jPDGpW3wr9osD9",
       tags: ["Solidity", "DEFI", "Foundry"],
       alt: "Decentralized Stablecoin Protocol",
       github: "https://github.com/Aditya-alchemist/Decentralized-Stablecoin-Protocol",
