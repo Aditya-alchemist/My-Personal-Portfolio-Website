@@ -8,6 +8,7 @@ import Projects from "@/components/sections/projects";
 import Contact from "@/components/sections/contact";
 import FloatingCrypto from "@/components/floating-crypto";
 import { useScrollProgress } from "@/hooks/use-scroll-progress";
+import Achievements from "@/components/sections/achievements";
 
 export default function Home() {
   const scrollProgress = useScrollProgress();
@@ -41,6 +42,7 @@ export default function Home() {
         <About />
         <Experience />
         <Projects />
+        <Achievements />
         <Contact />
       </motion.main>
       
