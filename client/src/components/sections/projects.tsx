@@ -179,9 +179,12 @@ export default function Projects() {
         <div className="mb-12">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Other Noteworthy Projects</h3>
           <div className="text-center mb-8">
-            <a href="  /archive" className="text-[#00d4ff] hover:text-[#00d4ff]/80 transition-colors duration-300 font-mono text-sm">
+           <Link
+              href="/archive"
+              className="text-[#00d4ff] hover:text-[#00d4ff]/80 transition-colors duration-300 font-mono text-sm"
+            >
               view the archive
-            </a>
+            </Link>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherProjects.map((project, index) => (

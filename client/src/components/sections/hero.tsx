@@ -57,9 +57,31 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl sm:text-2xl md:text-3xl text-gray-400 mb-8 min-h-[3rem] flex items-center justify-center"
+          className="mb-8 min-h-[3rem] flex items-center justify-center"
         >
-          <span className="typing-text break-words text-center px-2">{typingText}</span>
+          <span
+            className="
+              typing-text
+              break-words
+              whitespace-normal
+              text-center
+              px-2
+              text-lg
+              sm:text-2xl
+              md:text-3xl
+              text-gray-400
+              max-w-xs
+              sm:max-w-md
+              md:max-w-2xl
+              w-full
+              "
+            style={{
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+            }}
+          >
+            {typingText}
+          </span>
         </motion.div>
 
         {/* Description */}
