@@ -13,6 +13,16 @@ export default function Projects() {
       github: "https://github.com/Aditya-alchemist/GFGKIIT-CRYPTOMA-HyperThon",
       live: "https://gfgkiit-cryptoma-hyperthon.vercel.app/"
     },
+     {
+      title: "RetroSwap Dex",
+      description:
+        "A modern, full-stack decentralized exchange built on Ethereum using Uniswap V3 protocols. RetroSwap enables seamless token swapping and liquidity provision with an intuitive user interface and robust smart contract architecture.",
+      image: "https://gateway.pinata.cloud/ipfs/bafybeiezj74m6pnr4kg6agjqgqxyd5pcymj2w4v56zdpaegfzzqyxcp73e",
+      tags: ["Solidity", "React", "Ether.js", "UniswapV3", "Foundry","Typescript"],
+      alt: "RetroSwap Dex",
+      github: "https://github.com/Aditya-alchemist/Retro-Swap",
+      live: "https://retroswap.netlify.app/"
+    },
     {
       title: "Starktweet",
       description:

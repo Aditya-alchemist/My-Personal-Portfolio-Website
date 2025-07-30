@@ -4,6 +4,15 @@ import { Link } from "wouter";
 const archiveProjects = [
   {
     year: "2025",
+    title: "RetroSwap Dex",
+    company: "Personal",
+    builtWith: ["Solidity", "React", "Ether.js", "UniswapV3", "Foundry","Typescript"],
+    github: "https://github.com/Aditya-alchemist/Retro-Swap",
+    live: "https://retroswap.netlify.app/",
+    archived: false
+  },
+  {
+    year: "2025",
     title: " Custom Uniswap v2 ",
     company: "Personal",
     builtWith: ["Solidity", "Foundry", "DEFI", "DEX"],
