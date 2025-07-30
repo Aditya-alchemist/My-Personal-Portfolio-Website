@@ -6,7 +6,7 @@ A modern, full-stack Web3 portfolio showcasing blockchain development expertise 
 
 ## 🚀 Live Demo
 
-**Portfolio:** [https://aditya-kumar-mishra-portfolio.onrender.com/](https://aditya-kumar-mishra-portfolio.onrender.com/)  
+**Portfolio:** [https://adityaalchemist.netlify.app/](https://adityaalchemist.netlify.app/)  
 
 
 ## ✨ Features
