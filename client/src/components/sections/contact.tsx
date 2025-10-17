@@ -31,7 +31,7 @@ export default function Contact() {
         email: formData.email,
         message: formData.message,
       },
-      "NOGb7e1UYlL9tVh4l" // from dashboard
+      "xKYpMWJplvMUm1t0m" // from dashboard
     );
 
     toast({
