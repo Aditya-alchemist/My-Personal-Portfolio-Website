@@ -2,7 +2,33 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 
 const archiveProjects = [
-  {
+ {
+  year: "2025",
+  title: "CEX Arbitrage Bot",
+  company: "Personal",
+  builtWith: ["Node.js", "TypeScript", "WebSocket", "Binance API", "OKX API", "Express"],
+  github: "https://github.com/Aditya-alchemist/Centralized-Arbitrage-bot",
+  live: null,
+  archived: false
+}
+, {
+  year: "2025",
+  title: "Decentralized Messaging App",
+  company: "Personal",
+  builtWith: ["XMTP v3", "React", "TypeScript", "WalletConnect", "Pinata IPFS", "MLS Encryption"],
+  github: "https://github.com/Aditya-alchemist/XMTP-Telegram",
+  live: "https://xmtp-telegram.vercel.app/",
+  archived: false
+},{
+  year: "2025",
+  title: "AI Mood Minter",
+  company: "Personal",
+  builtWith: ["Solidity", "React", "OpenCV", "Python", "Pinata IPFS", "Ethers.js"],
+  github: "https://github.com/Aditya-alchemist/Ai-nft-mood-minter",
+  live: "https://ai-nft-mood-minter.vercel.app/",
+  archived: false
+}
+,{
     year: "2025",
     title: "RetroSwap Dex",
     company: "Personal",

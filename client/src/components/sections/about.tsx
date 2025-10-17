@@ -14,7 +14,8 @@ export default function About() {
     "JavaScript",
     "Chainlink",
     "Zkrollups",
-    "DEFI"
+    "DEFI",
+    "AI"
   ];
 
   return (
@@ -37,7 +38,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Hello! I'm Aditya, a passionate blockchain developer focused on building decentralized apps with real utility. Since 2023, I've been exploring smart contracts, DeFi, and zk tech. In 2025, I dove deep into StarkNet and Cairo, mastering zk-native dApps, NFT bridging, and full-stack development with Cairo contracts, custom frontends, and StarkNet.js integrations across complex Web3 projects.
+             Hello! I'm Aditya, a blockchain developer building decentralized applications at the intersection of AI, DeFi, and zero-knowledge technology. Since 2023, I've specialized in full-stack Web3 development—from Cairo smart contracts on StarkNet to production-ready dApps with custom frontends, encrypted messaging protocols, and AI-powered on-chain systems. I focus on shipping real utility: arbitrage bots, decentralized communication infrastructure, interactive prediction markets, and zk-native applications that push the boundaries of what's possible on-chain.
             </motion.p>
 
             <motion.p 

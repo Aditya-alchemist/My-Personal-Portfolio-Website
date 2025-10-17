@@ -3,16 +3,17 @@ import { Link } from "wouter";
 
 export default function Projects() {
   const featuredProjects = [
-    {
-      title: "NFT Ticketing System",
-      description:
-        "This system redefines event ticketing by leveraging non-tradable NFTs, ensuring security, transparency, and fairness. Built with Solidity smart contracts and React frontend, it prevents ticket scalping and fraud while providing a seamless user experience. The system integrates with IPFS for decentralized metadata storage and uses Foundry for robust testing and deployment.",
-      image: "https://gateway.pinata.cloud/ipfs/bafybeigjixcvlk4mu7ucsk4kx2fpuxnyvfqgejuzidwbs2sjhkg6fxzwfe",
-      tags: ["Solidity", "React", "Ether.js", "Pinata", "Foundry"],
-      alt: "NFT Ticketing System",
-      github: "https://github.com/Aditya-alchemist/GFGKIIT-CRYPTOMA-HyperThon",
-      live: "https://gfgkiit-cryptoma-hyperthon.vercel.app/"
-    },
+   {
+  title: "CEX Arbitrage Bot",
+  description:
+    "Automated cryptocurrency arbitrage trading bot that monitors real-time price spreads across multiple centralized exchanges (Binance, OKX, KuCoin). The bot identifies profitable arbitrage opportunities by comparing asset prices, calculates transaction costs including fees and slippage, and executes rapid buy-sell cycles to capture profit margins. Built with WebSocket connections for live market data streaming and REST APIs for trade execution, demonstrating advanced understanding of market microstructure and algorithmic trading strategies.",
+  image: "https://gateway.pinata.cloud/ipfs/bafkreibwhl2u5ih4c5qn7otroreh5syguugvbbei6z22i4wskliymgi2ra",
+  tags: ["Node.js", "WebSocket", "Binance API", "Trading Bot", "REST API"],
+  alt: "CEX Arbitrage Bot",
+  github: "https://github.com/Aditya-alchemist/Centralized-Arbitrage-bot",
+  live: null
+}
+,
      {
       title: "RetroSwap Dex",
       description:
@@ -23,16 +24,17 @@ export default function Projects() {
       github: "https://github.com/Aditya-alchemist/Retro-Swap",
       live: "https://retroswap.netlify.app/"
     },
-    {
-      title: "Starktweet",
-      description:
-        "StarkTweet is a fully on-chain, decentralized microblogging platform built on Starknet's Layer 2 solution. Users can post tweets, follow other users, and interact with content while benefiting from Starknet's low transaction costs and high throughput. The platform demonstrates the potential of Layer 2 scaling solutions for social media applications, with all data stored permanently on-chain.",
-      image: "https://gateway.pinata.cloud/ipfs/bafkreiaqkl74h2q6xgq3n6gexkmxpyxa74p7sxik2kh7upo5xpig6uahom",
-      tags: ["Cairo", "Starknet", "Starknet.js", "Pinata", "React"],
-      alt: "Starktweet",
-      github: "https://github.com/Aditya-alchemist/StarkTweet",
-      live: "https://stark-tweet.vercel.app/"
-    },
+   {
+  title: "Decentralized Messaging App",
+  description:
+    "Production-ready decentralized messaging application built on XMTP v3 protocol with Telegram-inspired UI/UX. Features end-to-end encrypted direct messages and group chats using MLS (Messaging Layer Security) protocol, wallet-based authentication with WalletConnect and Coinbase Wallet integration, and decentralized file sharing through Pinata IPFS. Implements push notifications, message persistence, and real-time synchronization across multiple devices. Showcases the future of Web3 communication infrastructure with quantum-resistant encryption and censorship-resistant messaging.",
+  image: "https://gateway.pinata.cloud/ipfs/bafkreics4t5lfeyel4djrqmlwcuek2nwjbnott5jxgxu2ygp6meelmuzwa",
+  tags: ["XMTP v3", "React", "WalletConnect", "Pinata IPFS", "MLS Encryption"],
+  alt: "Decentralized Messaging App",
+  github: "https://github.com/Aditya-alchemist/XMTP-Telegram",
+  live: "https://xmtp-telegram.vercel.app/" // Update with your actual deployment
+}
+,
     {
       title: "Decentralized Stablecoin Protocol",
       description:
@@ -162,14 +164,16 @@ export default function Projects() {
                 >
                   <i className="fab fa-github text-xl"></i>
                 </a>
-                <a
-                  href={project.live}
-                  className="text-[#00d4ff] hover:text-[#00d4ff]/80 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fas fa-external-link-alt text-xl"></i>
-                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    className="text-[#00d4ff] hover:text-[#00d4ff]/80 transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fas fa-external-link-alt text-xl"></i>
+                  </a>
+                )}
               </div>
             </div>
             <div className={`order-1 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>

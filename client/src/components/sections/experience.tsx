@@ -4,6 +4,29 @@ import { Card } from "@/components/ui/card";
 export default function Experience() {
   const experiences = [
     {
+  title: "Product Intern",
+  company: "XO Market",
+  period: "2025 August - 2025 October",
+  achievements: [
+    "Built Discord RAG Expert Chatbot integrating AI with live blockchain queries for real-time market data from XO Market testnet",
+    "Developed intelligent Q&A system using Pinecone vector database and OpenAI API with proper citation support for community assistance",
+    "Created LS-LMSR simulator demonstrating adaptive automated market maker algorithm with dynamic liquidity adjustment based on trade volume",
+    "Built Deek mini-game using React to gamify prediction market education and drive community engagement through interactive gameplay",
+  ],
+},{
+  title: "Blockchain Lead",
+  company: "GeeksforGeeks KIIT",
+  period: "2025 - present",
+  achievements: [
+    "Built centralized crypto arbitrage bot tracking multi-exchange spreads (Binance, OKX) with automated execution logic",
+    "Developed decentralized messaging app using XMTP v3 with E2E encryption, group chats, and IPFS-based file sharing",
+    "Shipped AI + Web3 apps: emotion-to-NFT minting (OpenCV + Solidity), AI-assisted dApp agents, and RAG-powered on-chain assistants",
+    "Created full-stack Web3 projects including NFT marketplace and StarkNet dApps with ERC-721 and IPFS integration",
+     "Led blockchain workshops and technical sessions, mentoring students on Web3 development, smart contract security, and DeFi protocols",
+  ],
+}
+,
+    {
       title: "Freelancer",
       company: "Starknet Arcade",
       period: "2025 may  - 2025 june",
@@ -17,7 +40,7 @@ export default function Experience() {
     {
       title: "Blockchain Developer",
       company: "GeeksforGeeks KIIT",
-      period: "2024 - present",
+      period: "2024 - 2025",
       achievements: [
         "Built and launched projects like  NFT marketplace and Daap on StarkNet ",
         "Developed ERC-721 and upgradeable smart contracts ",
