@@ -148,13 +148,8 @@ export default function WalletConnect() {
 
   if (isConnected && address) {
     return (
-      <div className="flex items-center space-x-2 lg:space-x-3">
-        <div className="hidden sm:flex items-center space-x-2 rounded-lg border border-white/10 bg-[#1a1a1a] px-2 py-1.5 lg:px-3">
-          <div className={`h-2 w-2 rounded-full ${isOnPreferredChain ? "bg-green-500" : "bg-amber-400"}`}></div>
-          <span className="text-xs font-medium text-[#00d4ff] lg:text-sm">{chain?.name ?? preferredChain.name}</span>
-        </div>
-
-        <div className="hidden rounded-lg border border-white/10 bg-[#1a1a1a] px-2 py-1.5 md:flex lg:px-3">
+      <div className="flex items-center gap-2 xl:gap-3">
+        <div className="hidden rounded-lg border border-white/10 bg-[#1a1a1a] px-2 py-1.5 2xl:flex lg:px-3">
           <span className="text-xs font-medium text-white lg:text-sm">
             {balance ? `${parseFloat(formatEther(balance.value)).toFixed(4)} ${balance.symbol}` : '0.0000 ETH'}
           </span>
@@ -164,7 +159,7 @@ export default function WalletConnect() {
           <Button
             onClick={handleSwitchToSepolia}
             disabled={isSwitching}
-            className="hidden bg-amber-500 px-3 py-2 text-xs font-medium text-black hover:bg-amber-400 lg:inline-flex"
+            className="hidden bg-amber-500 px-3 py-2 text-xs font-medium text-black hover:bg-amber-400 2xl:inline-flex"
           >
             {isSwitching ? "Switching..." : "Switch to Sepolia"}
           </Button>
@@ -173,14 +168,14 @@ export default function WalletConnect() {
         <Button
           onClick={handleButtonClick}
           disabled={isConnecting}
-          className="bg-green-600 hover:bg-green-700 disabled:opacity-50 text-white font-medium px-3 lg:px-4 py-2 rounded-lg transition-colors duration-300 flex items-center space-x-2"
+          className="flex items-center space-x-2 rounded-lg border border-[#66ffe5]/20 bg-white/10 px-3 py-2 text-[#d8fff9] backdrop-blur-md transition-colors duration-300 hover:bg-white/15 disabled:opacity-50 lg:px-4"
         >
           {renderWalletIcon(connector?.name || 'wallet')}
-          <span className="hidden sm:inline text-xs lg:text-sm">
+          <span className="hidden md:inline text-xs lg:text-sm">
             {address ? `${address.slice(0, 4)}...${address.slice(-3)}` : "Connected"}
           </span>
-          <span className="sm:hidden text-xs">
-            {isConnecting ? "..." : "Connected"}
+          <span className="text-xs md:hidden">
+            {address ? `${address.slice(0, 4)}...` : "Live"}
           </span>
         </Button>
       </div>
@@ -192,14 +187,14 @@ export default function WalletConnect() {
       <Button
         onClick={handleButtonClick}
         disabled={isConnecting}
-        className="bg-[#00d4ff] hover:bg-[#00d4ff]/90 disabled:opacity-50 text-[#0a0a0a] font-medium px-4 lg:px-6 py-2 rounded-lg transition-colors duration-300 flex items-center space-x-2"
+        className="flex items-center space-x-2 rounded-lg bg-[#00d4ff] px-3 py-2 font-medium text-[#0a0a0a] transition-colors duration-300 hover:bg-[#00d4ff]/90 disabled:opacity-50 lg:px-5"
       >
         <i className={`fas ${isConnecting ? 'fa-spinner fa-spin' : 'fa-wallet'}`}></i>
-        <span className="hidden sm:inline">
+        <span className="hidden md:inline">
           {isConnecting ? 'Connecting...' : 'Connect Wallet'}
         </span>
-        <span className="sm:hidden text-xs">
-          {isConnecting ? 'Connecting...' : 'Connect'}
+        <span className="text-xs md:hidden">
+          {isConnecting ? '...' : 'Connect'}
         </span>
       </Button>
 

@@ -9,6 +9,7 @@ export default function Navigation() {
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
+  const [isCompactNav, setIsCompactNav] = useState(false);
 
   const navItems = [
     { href: "#about", label: "About", number: "01" },
@@ -37,6 +38,18 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    // Keep the desktop header intact longer so 100% zoom still uses the desktop
+    // layout and only collapse when the viewport is genuinely narrow.
+    const mediaQuery = window.matchMedia("(max-width: 980px)");
+    const updateLayoutMode = () => setIsCompactNav(mediaQuery.matches);
+
+    updateLayoutMode();
+    mediaQuery.addEventListener("change", updateLayoutMode);
+
+    return () => mediaQuery.removeEventListener("change", updateLayoutMode);
+  }, []);
+
   const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -56,7 +69,7 @@ export default function Navigation() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 w-full max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-10">
+      <div className="flex h-20 w-full items-center justify-between px-4 sm:px-6 lg:px-10 2xl:px-14">
         <Link href="/" className="relative inline-flex items-center justify-center">
           <motion.div
             whileHover={{ scale: 1.04 }}
@@ -81,7 +94,7 @@ export default function Navigation() {
         </Link>
 
         <div className="flex items-center gap-4 lg:gap-6">
-          {!isMobile && (
+          {!isCompactNav && (
             <div className="hidden items-center gap-6 md:flex lg:gap-8">
               {navItems.map((item, index) => (
                 <motion.button
@@ -113,7 +126,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: [0.645, 0.045, 0.355, 1], delay: (navItems.length + 1) * 0.08 }}
           >
-            {isMobile && (
+            {isCompactNav && (
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="mr-1 rounded-md p-2 text-gray-300 transition-colors hover:text-[#66ffe5]"
@@ -127,7 +140,7 @@ export default function Navigation() {
         </div>
       </div>
 
-      {isMobile && isMenuOpen && (
+      {isCompactNav && isMenuOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}

@@ -47,7 +47,7 @@ export default function Home() {
       
       {/* Main Content */}
       <motion.main
-        className="pt-20 md:pt-24"
+        className="pt-20 md:pt-24 lg:px-14 xl:px-16 2xl:px-0"
         initial={{ opacity: 0, filter: "blur(10px)" }}
         animate={{ opacity: isLoaded ? 1 : 0, filter: isLoaded ? "blur(0px)" : "blur(10px)" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -61,7 +61,7 @@ export default function Home() {
       </motion.main>
       
       {/* Footer */}
-      <footer className="py-12 text-center">
+      <footer className="py-12 text-center lg:px-14 xl:px-16 2xl:px-0">
         <div className="max-w-4xl mx-auto px-4">
           <p className="text-gray-400 mb-4">
             Built with passion for decentralization and a love for clean code.
