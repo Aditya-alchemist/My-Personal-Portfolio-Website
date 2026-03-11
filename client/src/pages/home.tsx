@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Navigation from "@/components/navigation";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
@@ -9,17 +9,27 @@ import Contact from "@/components/sections/contact";
 import FloatingCrypto from "@/components/floating-crypto";
 import { useScrollProgress } from "@/hooks/use-scroll-progress";
 import Achievements from "@/components/sections/achievements";
+import InitialLoader from "@/components/initial-loader";
+import Sidebars from "@/components/sidebars";
 
 export default function Home() {
   const scrollProgress = useScrollProgress();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    setIsLoaded(true);
+    const timer = window.setTimeout(() => {
+      setShowLoader(false);
+      setIsLoaded(true);
+    }, 3300);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
+      <AnimatePresence>{showLoader && <InitialLoader />}</AnimatePresence>
+
       {/* Scroll Progress Indicator */}
       <div 
         className="scroll-indicator" 
@@ -31,12 +41,16 @@ export default function Home() {
       
       {/* Navigation */}
       <Navigation />
+
+      {/* Sidebars – rendered outside motion.main so opacity:0 on main doesn't hide them */}
+      <Sidebars />
       
       {/* Main Content */}
       <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isLoaded ? 1 : 0 }}
-        transition={{ duration: 0.8 }}
+        className="pt-20 md:pt-24"
+        initial={{ opacity: 0, filter: "blur(10px)" }}
+        animate={{ opacity: isLoaded ? 1 : 0, filter: isLoaded ? "blur(0px)" : "blur(10px)" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <Hero />
         <About />

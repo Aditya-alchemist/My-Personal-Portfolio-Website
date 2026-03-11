@@ -5,19 +5,35 @@ import { Button } from "@/components/ui/button";
 export default function Hero() {
   const [typingText, setTypingText] = useState("");
   const fullText = "I build decentralized applications for the future";
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    show: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay,
+        duration: 0.3,
+        ease: [0.645, 0.045, 0.355, 1],
+      },
+    }),
+  };
 
   useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index < fullText.length) {
-        setTypingText(fullText.slice(0, index + 1));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 100);
+    // Delay typing until after loader finishes (3.3s)
+    const startDelay = setTimeout(() => {
+      let index = 0;
+      const timer = setInterval(() => {
+        if (index < fullText.length) {
+          setTypingText(fullText.slice(0, index + 1));
+          index++;
+        } else {
+          clearInterval(timer);
+        }
+      }, 80);
+      return () => clearInterval(timer);
+    }, 3300);
 
-    return () => clearInterval(timer);
+    return () => clearTimeout(startDelay);
   }, []);
 
   const handleViewWork = () => {
@@ -28,14 +44,15 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-visible">
       {/* Main Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Greeting Text */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial="hidden"
+          animate="show"
+          custom={0.1}
+          variants={fadeUp}
           className="text-base sm:text-lg md:text-xl text-[#00d4ff] font-mono mb-4"
         >
           Hi, my name is
@@ -43,9 +60,10 @@ export default function Hero() {
 
         {/* Name */}
         <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial="hidden"
+          animate="show"
+          custom={0.2}
+          variants={fadeUp}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight break-words"
         >
           <span className="text-white">Aditya</span>{" "}
@@ -54,9 +72,10 @@ export default function Hero() {
 
         {/* Typing Animation */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          initial="hidden"
+          animate="show"
+          custom={0.3}
+          variants={fadeUp}
           className="mb-8 min-h-[3rem] flex items-center justify-center"
         >
           <span
@@ -86,9 +105,10 @@ export default function Hero() {
 
         {/* Description */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          initial="hidden"
+          animate="show"
+          custom={0.4}
+          variants={fadeUp}
           className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed px-2"
         >
           Blockchain developer specializing in DeFi protocols, smart contracts,
@@ -98,9 +118,10 @@ export default function Hero() {
 
         {/* Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          initial="hidden"
+          animate="show"
+          custom={0.5}
+          variants={fadeUp}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
         >
           <Button
@@ -123,66 +144,6 @@ export default function Hero() {
             </Button>
           </a>
         </motion.div>
-      </div>
-
-      {/* Left Social Links - Brittany Chiang Style */}
-      <div className="fixed left-4 lg:left-10 bottom-0 z-40 hidden lg:block">
-        <div className="flex flex-col items-center">
-          <div className="flex flex-col space-y-5 mb-8">
-            <a
-              href="https://github.com/Aditya-alchemist"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
-            >
-              <i className="fab fa-github text-xl"></i>
-            </a>
-            <a
-              href="https://x.com/Adityaalchemist?t=snsq45voDbhQVn6oe_UcWw&s=09"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
-            >
-              <i className="fab fa-twitter text-xl"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/aditya-kumar-mishra-alchemy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
-            >
-              <i className="fab fa-linkedin text-xl"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/aditya_41205/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
-            >
-              <i className="fab fa-instagram text-xl"></i>
-            </a>
-          </div>
-          <div className="w-px h-24 bg-gray-400/50"></div>
-        </div>
-      </div>
-
-      {/* Right Email - Brittany Chiang Style */}
-      <div className="fixed right-4 lg:right-10 bottom-0 z-40 hidden lg:block">
-        <div className="flex flex-col items-center">
-          <div className="mb-8">
-            <a
-              href="mailto:adityakumar41205@gmail.com"
-              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 transform hover:-translate-y-1 font-mono text-sm tracking-widest"
-              style={{
-                writingMode: 'vertical-rl',
-                textOrientation: 'mixed'
-              }}
-            >
-              adityakumar41205@gmail.com
-            </a>
-          </div>
-          <div className="w-px h-24 bg-gray-400/50"></div>
-        </div>
       </div>
     </section>
   );

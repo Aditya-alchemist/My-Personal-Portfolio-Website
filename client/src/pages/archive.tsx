@@ -48,11 +48,11 @@ const archiveProjects = [
   },
   {
     year: "2025",
-    title: "PropertyNFT Marketplace ",
+    title: "Carbon Credit MarketPlace",
     company: "Personal",
-    builtWith: ["React", "Ethereum", "IPFS", "Solidity","Foundry","Ether.js","Chainlink"],
-    github: "https://github.com/Aditya-alchemist/RealEstate-Chromium-hackathon",
-    live: "https://real-estate-chromium-hackathon.vercel.app/",
+    builtWith: ["React", "TypeScript", "Solidity", "AI", "MongoDB"],
+    github: "https://github.com/Aditya-alchemist/Carbon-Credit-MarketPlace",
+    live: null,
     archived: false
   },
   {
@@ -156,12 +156,21 @@ const archiveProjects = [
     archived: false
   },
   {
-    year: "2024",
-    title: "NFT Voting",
-    company: "GeeksforGeeks KIIT ",
-    builtWith: ["Solidity", "React", "IPFS", "Ether.js"],
-    github: "https://github.com/Aditya-alchemist/NFT-VOTING-CONTEST",
-    live: "https://nft-voting-contest-gojh.vercel.app/",
+    year: "2025",
+    title: "EduChain",
+    company: "Spark Scale Hackathon",
+    builtWith: ["React", "TypeScript", "AI", "IPFS", "Solidity"],
+    github: "https://github.com/Aditya-alchemist/EduChain",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2025",
+    title: "VeritasChain",
+    company: "Personal",
+    builtWith: ["React", "TypeScript", "AI", "IPFS", "Sepolia"],
+    github: "https://github.com/Aditya-alchemist/VeritasChain",
+    live: "https://veritas-chain.vercel.app/",
     archived: false
   }
 ];
@@ -227,8 +236,8 @@ export default function Archive() {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-6xl font-bold mb-6">Archive</h1>
@@ -237,7 +246,7 @@ export default function Archive() {
           </p>
 
           {/* Projects Table */}
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto pb-4">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b border-gray-800">
@@ -253,8 +262,8 @@ export default function Archive() {
                   <motion.tr
                     key={index}
                     className="border-b border-gray-800/50 hover:bg-gray-900/20 transition-colors"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <td className="py-4 px-2 text-[#00d4ff] font-mono text-sm">

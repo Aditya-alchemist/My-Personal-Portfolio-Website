@@ -1,4 +1,6 @@
 import { Switch, Route } from "wouter";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from 'wagmi';
@@ -19,11 +21,22 @@ function Router() {
   );
 }
 
+function RouteEffects() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location]);
+
+  return null;
+}
+
 function App() {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
+          <RouteEffects />
           <Toaster />
           <Router />
         </TooltipProvider>

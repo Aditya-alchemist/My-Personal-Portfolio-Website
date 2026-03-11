@@ -19,14 +19,18 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="min-h-screen py-24 sm:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-bold mb-12 text-white">About Me</h2>
+        <div className="mb-12 flex items-center gap-4">
+          <span className="font-mono text-3xl text-[#66ffe5]">01.</span>
+          <h2 className="text-4xl font-bold text-white">About Me</h2>
+          <div className="hidden h-px flex-1 bg-white/10 md:block" />
+        </div>
         
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           <div className="lg:col-span-2 space-y-6">
@@ -110,14 +114,19 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="relative group">
+            {/* Photo wrapper with offset border accent (Brittany Chiang style) */}
+            <div className="relative" style={{ paddingRight: "20px", paddingBottom: "20px" }}>
               <img 
                 src="https://gateway.pinata.cloud/ipfs/bafkreiaqwdy5f3sdqutokssqlman4imzinygw37ysafwd44neu27usdps4"
                 alt="Professional developer portrait" 
-                className="w-full h-80 rounded-lg object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 relative z-10" 
+                className="w-full rounded-lg object-cover relative z-10 transition-all duration-500 grayscale hover:grayscale-0 hover:translate-x-[-4px] hover:translate-y-[-4px]" 
+                style={{ aspectRatio: "4/5", objectPosition: "center top" }}
               />
-              <div className="absolute inset-0 bg-[#00d4ff]/20 rounded-lg group-hover:bg-transparent transition-all duration-300"></div>
-              <div className="absolute inset-0 border-2 border-[#00d4ff] rounded-lg translate-x-4 translate-y-4 -z-10"></div>
+              <motion.div
+                className="absolute bottom-0 right-0 w-[calc(100%-20px)] h-[calc(100%-20px)] rounded-lg border-2 border-[#66ffe5] z-0"
+                animate={{ opacity: [0.55, 0.85, 0.55] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              />
             </div>
           </motion.div>
         </div>

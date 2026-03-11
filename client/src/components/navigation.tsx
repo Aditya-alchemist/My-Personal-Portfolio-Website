@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import WalletConnect from "./wallet-connect";
@@ -6,6 +6,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
 
   const navItems = [
@@ -14,6 +16,26 @@ export default function Navigation() {
     { href: "#projects", label: "Projects", number: "03" },
     { href: "#contact", label: "Contact", number: "04" },
   ];
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 24);
+
+      if (currentScrollY > lastScrollY && currentScrollY > 120 && !isMenuOpen) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMenuOpen]);
 
   const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
@@ -25,253 +47,105 @@ export default function Navigation() {
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10"
+      initial={{ y: -90, opacity: 0 }}
+      animate={{ y: isVisible ? 0 : -110, opacity: 1 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className={`fixed left-0 right-0 top-0 z-50 border-b transition-all duration-300 ${
+        isScrolled
+          ? "border-white/10 bg-[#0a0a0a]/95 shadow-[0_4px_24px_rgba(0,0,0,0.7)] backdrop-blur-md"
+          : "border-transparent bg-transparent"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <motion.a 
-              href="#" 
-              className="relative group"
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.3 }
-              }}
-              whileTap={{ scale: 0.95 }}
+      <div className="mx-auto flex h-20 w-full max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-10">
+        <Link href="/" className="relative inline-flex items-center justify-center">
+          <motion.div
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="relative h-14 w-14"
+          >
+            <svg viewBox="0 0 120 120" className="h-full w-full">
+              <path
+                d="M60 10 L98 32 L98 78 L60 100 L22 78 L22 32 Z"
+                fill="#0a0a0a"
+                stroke="rgba(102,255,229,0.45)"
+                strokeWidth="3"
+              />
+            </svg>
+            <span
+              className="absolute inset-0 flex items-center justify-center text-4xl font-semibold text-[#66ffe5]"
+              style={{ fontFamily: "'Fira Code', monospace" }}
             >
-              <div className="relative w-16 h-16 flex items-center justify-center">
-                {/* Dark outer container with blockchain-inspired design */}
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-lg"
-                  style={{
-                    clipPath: "polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)"
-                  }}
-                  animate={{
-                    boxShadow: [
-                      "0 0 0 1px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.8)",
-                      "0 0 0 2px rgba(0, 212, 255, 0.4), inset 0 0 30px rgba(0, 0, 0, 0.9)",
-                      "0 0 0 1px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.8)"
-                    ]
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 3,
-                    ease: "easeInOut"
-                  }}
-                />
+              A
+            </span>
+          </motion.div>
+        </Link>
 
-                {/* Matrix-style grid overlay */}
-                <motion.div 
-                  className="absolute inset-2 opacity-20"
-                  style={{
-                    backgroundImage: `
-                      linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px)
-                    `,
-                    backgroundSize: "8px 8px"
-                  }}
-                  animate={{
-                    opacity: [0.1, 0.3, 0.1]
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 4,
-                    ease: "easeInOut"
-                  }}
-                />
-
-                {/* Animated circuit lines */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 64 64">
-                  <motion.path
-                    d="M8 32 L24 32 L24 16 L40 16 L40 48 L56 48"
-                    stroke="rgba(0, 212, 255, 0.3)"
-                    strokeWidth="1"
-                    fill="none"
-                    strokeDasharray="4 4"
-                    animate={{
-                      strokeDashoffset: [0, -8]
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 2,
-                      ease: "linear"
-                    }}
-                  />
-                  <motion.path
-                    d="M56 32 L40 32 L40 48 L24 48 L24 16 L8 16"
-                    stroke="rgba(0, 212, 255, 0.2)"
-                    strokeWidth="1"
-                    fill="none"
-                    strokeDasharray="2 6"
-                    animate={{
-                      strokeDashoffset: [0, 8]
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 3,
-                      ease: "linear"
-                    }}
-                  />
-                </svg>
-
-                {/* Central AM text with dark theme */}
-                <motion.div 
-                  className="relative z-20 font-bold text-xl tracking-[0.2em]"
-                  style={{
-                    fontFamily: "'Fira Code', monospace",
-                    color: "#00d4ff",
-                    textShadow: "0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3)"
-                  }}
-                  animate={{
-                    textShadow: [
-                      "0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3)",
-                      "0 0 15px rgba(0, 212, 255, 0.8), 0 0 30px rgba(0, 212, 255, 0.5)",
-                      "0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3)"
-                    ]
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 2.5,
-                    ease: "easeInOut"
-                  }}
+        <div className="flex items-center gap-4 lg:gap-6">
+          {!isMobile && (
+            <div className="hidden items-center gap-6 md:flex lg:gap-8">
+              {navItems.map((item, index) => (
+                <motion.button
+                  key={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-sm text-gray-300 transition-colors duration-200 hover:text-[#66ffe5]"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, ease: [0.645, 0.045, 0.355, 1], delay: index * 0.08 }}
                 >
-                  AM
-                </motion.div>
-
-                {/* Dark corner nodes */}
-                {[
-                  { top: "4px", left: "4px" },
-                  { top: "4px", right: "4px" },
-                  { bottom: "4px", left: "4px" },
-                  { bottom: "4px", right: "4px" }
-                ].map((position, index) => (
-                  <motion.div
-                    key={index}
-                    className="absolute w-2 h-2 bg-[#00d4ff] rounded-full"
-                    style={position}
-                    animate={{
-                      opacity: [0.3, 1, 0.3],
-                      scale: [0.8, 1.2, 0.8]
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 2,
-                      delay: index * 0.5,
-                      ease: "easeInOut"
-                    }}
-                  />
-                ))}
-
-                {/* Scanning line effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00d4ff]/20 to-transparent"
-                  style={{
-                    clipPath: "polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)"
-                  }}
-                  animate={{
-                    x: ["-100%", "100%"]
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 3,
-                    ease: "easeInOut",
-                    repeatDelay: 2
-                  }}
-                />
-
-                {/* Outer glow ring */}
-                <motion.div 
-                  className="absolute inset-[-2px] rounded-lg border border-[#00d4ff]/30"
-                  style={{
-                    clipPath: "polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)"
-                  }}
-                  animate={{
-                    borderColor: [
-                      "rgba(0, 212, 255, 0.2)",
-                      "rgba(0, 212, 255, 0.6)",
-                      "rgba(0, 212, 255, 0.2)"
-                    ],
-                    filter: [
-                      "drop-shadow(0 0 5px rgba(0, 212, 255, 0.3))",
-                      "drop-shadow(0 0 15px rgba(0, 212, 255, 0.6))",
-                      "drop-shadow(0 0 5px rgba(0, 212, 255, 0.3))"
-                    ]
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 2,
-                    ease: "easeInOut"
-                  }}
-                />
-
-                {/* Hover state overlay */}
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-[#00d4ff]/10 to-transparent rounded-lg opacity-0 group-hover:opacity-100"
-                  style={{
-                    clipPath: "polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)"
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
-              </div>
-            </motion.a>
-          </div>
-          
-          <div className="flex items-center space-x-6">
-            {!isMobile && (
-              <div className="hidden md:flex items-baseline space-x-6">
-                {navItems.map((item) => (
-                  <button
-                    key={item.href}
-                    onClick={() => handleNavClick(item.href)}
-                    className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 text-sm"
-                  >
-                    <span className="text-[#00d4ff] font-mono">{item.number}.</span> {item.label}
-                  </button>
-                ))}
-                <Link href="/archive" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300 text-sm">
-                  <span className="text-[#00d4ff] font-mono">05.</span> Archive
+                  <span className="font-mono text-[#66ffe5]">{item.number}.</span> {item.label}
+                </motion.button>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, ease: [0.645, 0.045, 0.355, 1], delay: navItems.length * 0.08 }}
+              >
+                <Link href="/archive" className="text-sm text-gray-300 transition-colors duration-200 hover:text-[#66ffe5]">
+                  <span className="font-mono text-[#66ffe5]">05.</span> Archive
                 </Link>
-              </div>
-            )}
-            
-            <div className="flex items-center">
-              {isMobile && (
-                <button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-gray-400 hover:text-[#00d4ff] md:hidden mr-4"
-                >
-                  <i className="fas fa-bars"></i>
-                </button>
-              )}
-              <WalletConnect />
+              </motion.div>
             </div>
-          </div>
+          )}
+
+          <motion.div
+            className="flex items-center gap-3"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: [0.645, 0.045, 0.355, 1], delay: (navItems.length + 1) * 0.08 }}
+          >
+            {isMobile && (
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="mr-1 rounded-md p-2 text-gray-300 transition-colors hover:text-[#66ffe5]"
+                aria-label="Toggle mobile menu"
+              >
+                <i className={`fas ${isMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
+              </button>
+            )}
+            <WalletConnect />
+          </motion.div>
         </div>
       </div>
-      
-      {/* Mobile Menu */}
+
       {isMobile && isMenuOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-[#0a0a0a]/95 backdrop-blur-md"
+          className="border-t border-white/10 bg-[#0a0a0a]/98 px-4 py-3 backdrop-blur-md"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="space-y-1">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className="block w-full text-left px-3 py-2 text-gray-400 hover:text-[#00d4ff] transition-colors duration-300"
+                className="block w-full rounded-md px-3 py-2 text-left text-gray-300 transition-colors hover:bg-[#66ffe5]/10 hover:text-[#66ffe5]"
               >
-                <span className="text-[#00d4ff] font-mono">{item.number}.</span> {item.label}
+                <span className="font-mono text-[#66ffe5]">{item.number}.</span> {item.label}
               </button>
             ))}
-            <Link href="/archive" className="block w-full text-left px-3 py-2 text-gray-400 hover:text-[#00d4ff] transition-colors duration-300">
-              <span className="text-[#00d4ff] font-mono">05.</span> Archive
+            <Link href="/archive" className="block w-full rounded-md px-3 py-2 text-left text-gray-300 transition-colors hover:bg-[#66ffe5]/10 hover:text-[#66ffe5]">
+              <span className="font-mono text-[#66ffe5]">05.</span> Archive
             </Link>
           </div>
         </motion.div>

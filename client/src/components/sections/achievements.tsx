@@ -1,271 +1,185 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Achievements() {
-  const [activeTab, setActiveTab] = useState(0);
-
   const achievements = [
     {
       id: "recommendation",
+      num: "01",
       title: "Starknet Arcade Game Development",
-      company: "Recommendation",
-      period: "May 2025 - June 2025",
-      image: "https://gateway.pinata.cloud/ipfs/bafkreihh6ox4r6gjubt6lbhxa2j7jgapokqypdgzrbqvp74jv6oiujsps4",
-      description: [
+      label: "Freelance · Recommendation",
+      period: "May 2025 – June 2025",
+      icon: "fas fa-gamepad",
+      bullets: [
         "Built fully on-chain games on StarkNet using VRF and Cartridge controllers",
-        "Developed game logic in Cairo leveraging StarkNet's provable computation and integrated verifiable randomness (VRF) for unpredictable outcomes",
-        "Used Cartridge controllers to implement session keys and enable gasless transactions through account abstraction",
-        "Focused on secure, composable, and user-friendly on-chain game mechanics"
+        "Developed game logic in Cairo with verifiable randomness for provably fair mechanics",
+        "Implemented gasless UX via session keys and account abstraction",
       ],
-      link: "https://drive.google.com/file/d/1xaojqEBg8MVEzuI6RCa85266VCdXcUOv/view?usp=sharing"
+      link: "https://drive.google.com/file/d/1xaojqEBg8MVEzuI6RCa85266VCdXcUOv/view?usp=sharing",
+      linkLabel: "View Certificate",
     },
     {
-      id: "nft-ticketing",
-      title: "Hackathon by Ethereum Foundation winner",
-      company: "Hackathon winner",
-      period: "jan 2025",
-      image: "https://gateway.pinata.cloud/ipfs/bafkreiatj6mu5tnfj5nncbtpvpbcnsnoa63fb2ohjazmpjntpabcodff4e",
-      description: [
-        "Developed an innovative NFT-based ticketing system that prevents scalping and fraud",
-        "Built and launched projects like NFT marketplace and DApp on StarkNet",
-        "Integrated with IPFS for decentralized metadata storage",
-        "Implemented robust security measures to prevent fraud and unauthorized transfers"
+      id: "hackathon",
+      num: "02",
+      title: "Ethereum Foundation Hackathon Winner",
+      label: "Hackathon · Ethereum Foundation",
+      period: "Jan 2025",
+      icon: "fas fa-trophy",
+      bullets: [
+        "Won hackathon with an NFT-based ticketing system preventing scalping and fraud",
+        "Built NFT marketplace and DApp fully on StarkNet within competition timeline",
+        "Implemented decentralized metadata storage via IPFS",
       ],
-      link: "https://drive.google.com/file/d/11vjZTN4YDjNnAEl4dkBT8Dy0lWIoUHOz/view?usp=sharing"
+      link: "https://drive.google.com/file/d/11vjZTN4YDjNnAEl4dkBT8Dy0lWIoUHOz/view?usp=sharing",
+      linkLabel: "View Certificate",
     },
     {
-      id: "research-work",
-      title: "Research work",
-      company: "Research papers",
-      period: "2025 - Present",
-      image: "https://gateway.pinata.cloud/ipfs/bafybeicvv37jmd6krajilvyxrlnykr7mb4o4jlutbarkll7hsjfsycab74",
-      description: [
-        "Two research papers are under publication in peer-reviewed journals",
-        "one is on 'NFT based certificates ' and other is on 'Hardware implementation with blockchain voting system'",
-        "Integrated with IPFS for decentralized metadata storage",
-        "Used ETH as primary blockchain for implementation"
+      id: "research",
+      num: "03",
+      title: "Research Publications",
+      label: "Academic · Peer-reviewed Journals",
+      period: "2025 – Present",
+      icon: "fas fa-flask",
+      bullets: [
+        "Two papers under publication: NFT-based certificate verification system",
+        "Hardware implementation with blockchain-based voting system",
+        "Both implement Ethereum as the primary chain with IPFS storage layer",
       ],
-      link: "https://github.com/Aditya-alchemist/Research-project"
+      link: "https://github.com/Aditya-alchemist/Research-project",
+      linkLabel: "View Research",
     },
     {
-      id: "technical-writing",
+      id: "writing",
+      num: "04",
       title: "Technical Writing Recognition",
-      company: "Medium & Dev.to",
-      period: "2024 - Present",
-      image: "https://gateway.pinata.cloud/ipfs/bafkreigmsqd74xqqtted5hiuw6fcdmuykrjdlohztmvbupg6mksi22l42u",
-      description: [
-        "Started technical blogging on Medium and Dev.to with growing readership",
-        "Sharing insights on smart contracts, zk technology, and full-stack blockchain development",
-        "Established thought leadership in blockchain development through comprehensive technical articles",
-        "Started writing for 2 publications on Medium"
+      label: "Content · Medium & Dev.to",
+      period: "2024 – Present",
+      icon: "fas fa-pen-nib",
+      bullets: [
+        "Writing for 2 publications on Medium with growing readership",
+        "Topics: smart contracts, ZK technology, full-stack blockchain development",
+        "Establishing thought leadership through deep-dive technical articles",
       ],
-      link: "https://medium.com/@aditya-alchemist"
-    }
+      link: "https://medium.com/@aditya-alchemist",
+      linkLabel: "Read Articles",
+    },
   ];
 
   return (
-    <section id="achievements" className="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="achievements" className="mx-auto max-w-7xl px-4 py-24 sm:py-32 sm:px-6 lg:px-8 scroll-mt-20">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <h2 className="section-number">05. Achievements</h2>
-        <h3 className="text-4xl font-bold mb-12 text-white">What I've Accomplished</h3>
-        
-        <div className="flex flex-col lg:flex-row">
-          {/* Tab List - Mobile & Desktop Compatible */}
-          <div className="lg:min-w-[280px] lg:mr-12">
-            {/* Mobile: Horizontal Scrolling Tabs */}
-            <div className="lg:hidden mb-8">
-              <div className="flex overflow-x-auto pb-2 scrollbar-hide">
-                <div className="flex space-x-1 min-w-max">
-                  {achievements.map((achievement, index) => (
-                    <button
-                      key={achievement.id}
-                      onClick={() => setActiveTab(index)}
-                      className={`px-4 py-3 text-sm font-mono border-b-2 whitespace-nowrap transition-all duration-200 ${
-                        activeTab === index
-                          ? "text-[#64ffda] border-[#64ffda] bg-[#64ffda]/10"
-                          : "text-[#8892b0] border-[#233554] hover:text-[#64ffda] hover:bg-[#64ffda]/5"
-                      }`}
-                    >
-                      {achievement.company}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
+        <div className="mb-16 flex items-center gap-4">
+          <span className="font-mono text-3xl text-[#66ffe5]">05.</span>
+          <h3 className="text-4xl font-bold text-white">Achievements</h3>
+          <div className="hidden h-px flex-1 bg-white/10 md:block" />
+        </div>
 
-            {/* Desktop: Vertical Tabs */}
-            <div className="hidden lg:flex lg:flex-col">
-              {achievements.map((achievement, index) => (
-                <button
-                  key={achievement.id}
-                  onClick={() => setActiveTab(index)}
-                  className={`text-left px-6 py-4 text-sm font-mono border-l-2 transition-all duration-200 ${
-                    activeTab === index
-                      ? "text-[#64ffda] border-[#64ffda] bg-[#64ffda]/10"
-                      : "text-[#8892b0] border-[#233554] hover:text-[#64ffda] hover:bg-[#64ffda]/5"
-                  }`}
-                >
-                  {achievement.company}
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical spine */}
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[#66ffe5]/0 via-[#66ffe5]/25 to-[#66ffe5]/0 md:left-1/2 md:-translate-x-px" />
 
-          {/* Tab Content with Enhanced Image Animations */}
-          <div className="flex-1">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="grid lg:grid-cols-5 gap-8"
-            >
-              {/* Content Section - Takes up 3/5 of the space */}
-              <div className="lg:col-span-3 space-y-6">
-                {/* Achievement Header */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
-                  <h4 className="text-xl lg:text-2xl font-semibold text-white leading-tight">
-                    <span className="block sm:inline">{achievements[activeTab].title}</span>
-                    <span className="text-[#64ffda] block sm:inline sm:ml-2">
-                      @ {achievements[activeTab].company}
-                    </span>
-                  </h4>
-                  <p className="text-sm font-mono text-[#8892b0] mt-2">
-                    {achievements[activeTab].period}
-                  </p>
-                </motion.div>
+          {achievements.map((item, index) => {
+            const isEven = index % 2 === 0;
+            const color = isEven ? "#66ffe5" : "#39ff14";
 
-                {/* Achievement Description */}
-                <motion.ul 
-                  className="space-y-3"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  {achievements[activeTab].description.map((item, index) => (
-                    <motion.li 
-                      key={index} 
-                      className="flex items-start text-[#8892b0]"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                    >
-                      <span className="text-[#64ffda] mr-3 mt-1 text-sm flex-shrink-0">▹</span>
-                      <span className="leading-relaxed">{item}</span>
-                    </motion.li>
-                  ))}
-                </motion.ul>
+            return (
+              <motion.div
+                key={item.id}
+                className={`relative mb-10 flex pl-12 md:mb-16 md:pl-0 ${isEven ? "md:justify-start" : "md:justify-end"}`}
+                initial={{ opacity: 0, x: isEven ? -35 : 35 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                {/* Dot — mobile */}
+                <div
+                  className="absolute left-4 top-7 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 bg-[#0a0a0a] md:hidden"
+                  style={{ borderColor: color }}
+                />
+                {/* Dot — desktop */}
+                <div
+                  className="absolute left-1/2 top-7 z-10 hidden h-4 w-4 -translate-x-1/2 rounded-full border-2 bg-[#0a0a0a] md:block transition-shadow duration-300"
+                  style={{ borderColor: color, boxShadow: `0 0 10px ${color}55` }}
+                />
 
-                {/* Achievement Link */}
-                <motion.div 
-                  className="pt-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                >
-                  <a
-                    href={achievements[activeTab].link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-[#64ffda] hover:text-[#64ffda]/80 transition-colors duration-200 text-sm font-mono hover:translate-x-1 transform"
+                {/* Card */}
+                <div className={`group w-full md:w-[46%] ${isEven ? "md:pr-12" : "md:pl-12"}`}>
+                  <div
+                    className="relative overflow-hidden rounded-xl border bg-[#0c0c0c] p-6 transition-all duration-300 hover:bg-[#131313] hover:-translate-y-1 hover:shadow-xl"
+                    style={{ borderColor: `${color}28` }}
                   >
-                    <span>View Achievement</span>
-                    <i className="fas fa-external-link-alt ml-2"></i>
-                  </a>
-                </motion.div>
-              </div>
+                    {/* Hover accent border */}
+                    <div
+                      className="absolute inset-y-0 left-0 w-[2px] origin-bottom scale-y-0 transition-transform duration-300 group-hover:scale-y-100"
+                      style={{ background: color }}
+                    />
 
-              {/* Enhanced Image Section with Better Fitting and Animations */}
-              <div className="lg:col-span-2">
-                <motion.div 
-                  className="relative group sticky top-8"
-                  initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
-                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <div className="relative overflow-hidden rounded-lg shadow-2xl">
-                    <motion.img
-                      src={achievements[activeTab].image}
-                      alt={achievements[activeTab].title}
-                      className="w-full h-64 lg:h-80 object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                      whileHover={{ 
-                        scale: 1.05,
-                        rotateY: 5,
-                        rotateX: 5
-                      }}
-                      transition={{ duration: 0.4 }}
-                    />
-                    
-                    {/* Animated Overlay */}
-                    <motion.div 
-                      className="absolute inset-0 bg-gradient-to-br from-[#64ffda]/30 to-[#64ffda]/10 rounded-lg group-hover:bg-transparent transition-all duration-700"
-                      whileHover={{ opacity: 0 }}
-                      transition={{ duration: 0.4 }}
-                    />
-                    
-                    {/* Hover Effect Overlay */}
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                    
-                    {/* Animated Corner Accents */}
-                    <div className="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-[#64ffda] opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-                    <div className="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-[#64ffda] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-1 -translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-                    <div className="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-[#64ffda] opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-                    <div className="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-[#64ffda] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+                    {/* Decorative number */}
+                    <span
+                      className="pointer-events-none absolute -right-2 -top-4 select-none font-bold leading-none opacity-[0.04] transition-opacity duration-300 group-hover:opacity-[0.08]"
+                      style={{ fontSize: "clamp(5rem, 10vw, 7.5rem)", color }}
+                      aria-hidden="true"
+                    >
+                      {item.num}
+                    </span>
+
+                    <div className="relative z-10">
+                      {/* Icon + period */}
+                      <div className="mb-3 flex items-center justify-between">
+                        <span className="text-2xl" style={{ color }}>
+                          <i className={item.icon} />
+                        </span>
+                        <span className="font-mono text-xs text-gray-500">{item.period}</span>
+                      </div>
+
+                      {/* Label */}
+                      <span
+                        className="mb-1 block font-mono text-xs uppercase tracking-widest"
+                        style={{ color: `${color}99` }}
+                      >
+                        {item.label}
+                      </span>
+
+                      {/* Title */}
+                      <h4 className="mb-4 text-xl font-bold leading-snug text-white">{item.title}</h4>
+
+                      {/* Bullets */}
+                      <ul className="mb-5 space-y-2">
+                        {item.bullets.map((b) => (
+                          <li key={b} className="flex items-start gap-3 text-sm text-gray-400">
+                            <span
+                              className="mt-[6px] inline-block h-[5px] w-[5px] flex-shrink-0 rounded-full"
+                              style={{ background: color }}
+                            />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Link */}
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-mono text-sm transition-all duration-200 hover:gap-3 hover:text-white"
+                        style={{ color }}
+                      >
+                        {item.linkLabel}
+                        <i className="fas fa-arrow-right text-xs" />
+                      </a>
+                    </div>
                   </div>
-                  
-                  {/* Enhanced Decorative Border with Animation */}
-                  <motion.div 
-                    className="absolute inset-0 border-2 border-[#64ffda] rounded-lg -z-10 opacity-30 group-hover:opacity-80 transition-all duration-300"
-                    style={{ 
-                      transform: 'translate(16px, 16px)' 
-                    }}
-                    whileHover={{ 
-                      transform: 'translate(8px, 8px)',
-                      borderColor: '#64ffda'
-                    }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  
-                  {/* Animated Glow Effect */}
-                  <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-lg shadow-[#64ffda]/20 -z-20"></div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </motion.div>
-
-      {/* CSS Styles */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-          }
-          
-          /* Enhanced 3D perspective for images */
-          .group:hover img {
-            transform-style: preserve-3d;
-          }
-          
-          /* Smooth transitions for all animated elements */
-          * {
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          }
-        `
-      }} />
     </section>
   );
 }
