@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import WalletConnect from "./wallet-connect";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Navigation() {
@@ -15,7 +14,8 @@ export default function Navigation() {
     { href: "#about", label: "About", number: "01" },
     { href: "#experience", label: "Experience", number: "02" },
     { href: "#projects", label: "Projects", number: "03" },
-    { href: "#contact", label: "Contact", number: "04" },
+    { href: "#audits", label: "Audits", number: "04" },
+    { href: "#contact", label: "Contact", number: "05" },
   ];
 
   useEffect(() => {
@@ -114,7 +114,7 @@ export default function Navigation() {
                 transition={{ duration: 0.3, ease: [0.645, 0.045, 0.355, 1], delay: navItems.length * 0.08 }}
               >
                 <Link href="/archive" className="text-sm text-gray-300 transition-colors duration-200 hover:text-[#66ffe5]">
-                  <span className="font-mono text-[#66ffe5]">05.</span> Archive
+                  <span className="font-mono text-[#66ffe5]">06.</span> Archive
                 </Link>
               </motion.div>
             </div>
@@ -135,7 +135,6 @@ export default function Navigation() {
                 <i className={`fas ${isMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
               </button>
             )}
-            <WalletConnect />
           </motion.div>
         </div>
       </div>
@@ -158,7 +157,7 @@ export default function Navigation() {
               </button>
             ))}
             <Link href="/archive" className="block w-full rounded-md px-3 py-2 text-left text-gray-300 transition-colors hover:bg-[#66ffe5]/10 hover:text-[#66ffe5]">
-              <span className="font-mono text-[#66ffe5]">05.</span> Archive
+              <span className="font-mono text-[#66ffe5]">06.</span> Archive
             </Link>
           </div>
         </motion.div>

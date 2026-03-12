@@ -9,22 +9,36 @@ import Contact from "@/components/sections/contact";
 import FloatingCrypto from "@/components/floating-crypto";
 import { useScrollProgress } from "@/hooks/use-scroll-progress";
 import Achievements from "@/components/sections/achievements";
+import Audits from "@/components/sections/audits";
 import InitialLoader from "@/components/initial-loader";
 import Sidebars from "@/components/sidebars";
 
 export default function Home() {
   const scrollProgress = useScrollProgress();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [showLoader, setShowLoader] = useState(true);
+  const [showLoader, setShowLoader] = useState(() => {
+    // Check if loader has already been shown in this session
+    if (typeof window !== 'undefined') {
+      const loaderShown = sessionStorage.getItem('loaderShown');
+      return !loaderShown; // Show loader only if not shown before
+    }
+    return true;
+  });
 
   useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setShowLoader(false);
-      setIsLoaded(true);
-    }, 3300);
+    if (showLoader) {
+      const timer = window.setTimeout(() => {
+        setShowLoader(false);
+        setIsLoaded(true);
+        // Mark that loader has been shown in this session
+        sessionStorage.setItem('loaderShown', 'true');
+      }, 3300);
 
-    return () => window.clearTimeout(timer);
-  }, []);
+      return () => window.clearTimeout(timer);
+    } else {
+      setIsLoaded(true);
+    }
+  }, [showLoader]);
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
@@ -56,6 +70,7 @@ export default function Home() {
         <About />
         <Experience />
         <Projects />
+        <Audits />
         <Achievements />
         <Contact />
       </motion.main>

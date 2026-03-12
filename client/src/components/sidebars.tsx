@@ -43,6 +43,24 @@ export default function Sidebars() {
           >
             <i className="fab fa-instagram text-base xl:text-lg"></i>
           </a>
+          <a
+            href="https://medium.com/@aditya-alchemist"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[#66ffe5] transition-all duration-300 hover:-translate-y-1 transform"
+            title="Medium"
+          >
+            <i className="fab fa-medium text-base xl:text-lg"></i>
+          </a>
+          <a
+            href="https://dev.to/aditya-alchemist"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[#66ffe5] transition-all duration-300 hover:-translate-y-1 transform"
+            title="Dev.to"
+          >
+            <i className="fab fa-dev text-base xl:text-lg"></i>
+          </a>
         </div>
         <div className="h-20 w-px bg-gray-400/40 xl:h-24"></div>
       </motion.div>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useAccount } from "wagmi";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,7 +14,6 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { address } = useAccount();
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -123,12 +121,7 @@ export default function Contact() {
                 <i className="fas fa-envelope flex-shrink-0"></i>
                 <span className="text-sm">adityakumar41205@gmail.com</span>
               </a>
-              <div className="flex items-center justify-center space-x-3 text-gray-400">
-                <i className="fas fa-wallet"></i>
-                <span className="font-mono text-sm">
-                  {address ? `${address.slice(0, 6)}...${address.slice(-4)}` : "Connect wallet to view"}
-                </span>
-              </div>
+
               <div className="flex justify-center space-x-4">
                 <a 
                   href="https://github.com/Aditya-alchemist" 
@@ -148,7 +141,20 @@ export default function Contact() {
                 >
                   <i className="fab fa-linkedin text-xl"></i>
                 </a>
-             
+                <a 
+                  href="https://medium.com/@aditya-alchemist" 
+                  className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300"
+                  title="Medium"
+                >
+                  <i className="fab fa-medium text-xl"></i>
+                </a>
+                <a 
+                  href="https://dev.to/aditya-alchemist" 
+                  className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-300"
+                  title="Dev.to"
+                >
+                  <i className="fab fa-dev text-xl"></i>
+                </a>
               </div>
             </div>
           </Card>

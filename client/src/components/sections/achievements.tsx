@@ -73,7 +73,7 @@ export default function Achievements() {
         viewport={{ once: true }}
       >
         <div className="mb-16 flex items-center gap-4">
-          <span className="font-mono text-3xl text-[#66ffe5]">05.</span>
+          <span className="font-mono text-3xl text-[#66ffe5]">06.</span>
           <h3 className="text-4xl font-bold text-white">Achievements</h3>
           <div className="hidden h-px flex-1 bg-white/10 md:block" />
         </div>

@@ -2,6 +2,24 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 
 const archiveProjects = [
+  {
+    year: "2025",
+    title: "ArbAgents",
+    company: "Arbitrum Hackathon",
+    builtWith: ["Solidity", "Arbitrum", "AI Agents", "TypeScript", "React", "Ethers.js"],
+    github: "https://github.com/Aditya-alchemist/ArbAgents-Arbitrum-hackathon",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2025",
+    title: "Decentralized Arbitrage Bot",
+    company: "Personal",
+    builtWith: ["Solidity", "Foundry", "Flashloans", "DEX", "Uniswap", "Aave"],
+    github: "https://github.com/Aditya-alchemist/Decentralized-Arbitrage-bot",
+    live: null,
+    archived: false
+  },
  {
   year: "2025",
   title: "CEX Arbitrage Bot",
@@ -47,7 +65,7 @@ const archiveProjects = [
     archived: false
   },
   {
-    year: "2025",
+    year: "2026",
     title: "Carbon Credit MarketPlace",
     company: "Personal",
     builtWith: ["React", "TypeScript", "Solidity", "AI", "MongoDB"],
@@ -156,7 +174,7 @@ const archiveProjects = [
     archived: false
   },
   {
-    year: "2025",
+    year: "2026",
     title: "EduChain",
     company: "Spark Scale Hackathon",
     builtWith: ["React", "TypeScript", "AI", "IPFS", "Solidity"],
@@ -165,7 +183,7 @@ const archiveProjects = [
     archived: false
   },
   {
-    year: "2025",
+    year: "2026",
     title: "VeritasChain",
     company: "Personal",
     builtWith: ["React", "TypeScript", "AI", "IPFS", "Sepolia"],
@@ -179,7 +197,7 @@ export default function Archive() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Back Button */}
-      <div className="fixed top-4 left-4 z-50">
+      <div className="fixed top-4 left-4 lg:left-20 xl:left-24 z-50">
         <Link href="/">
           <motion.button
             className="flex items-center space-x-2 text-[#00d4ff] hover:text-white transition-colors"
@@ -193,7 +211,7 @@ export default function Archive() {
       </div>
 
       {/* Left Social Links - Brittany Chiang Style */}
-      <div className="fixed left-10 bottom-0 z-40 hidden lg:block">
+      <div className="fixed left-6 xl:left-10 bottom-0 z-40 hidden lg:block">
         <div className="flex flex-col items-center">
           <div className="flex flex-col space-y-5 mb-8">
             <a
@@ -228,13 +246,31 @@ export default function Archive() {
             >
               <i className="fab fa-linkedin text-xl"></i>
             </a>
+            <a
+              href="https://medium.com/@aditya-alchemist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+              title="Medium"
+            >
+              <i className="fab fa-medium text-xl"></i>
+            </a>
+            <a
+              href="https://dev.to/aditya-alchemist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#00d4ff] transition-all duration-300 hover:-translate-y-1 transform"
+              title="Dev.to"
+            >
+              <i className="fab fa-dev text-xl"></i>
+            </a>
           </div>
           <div className="w-px h-24 bg-gray-400/50"></div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 pt-32 pb-20">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -327,7 +363,7 @@ export default function Archive() {
       </div>
 
       {/* Right Email - Brittany Chiang Style */}
-      <div className="fixed right-10 bottom-0 z-40 hidden lg:block">
+      <div className="fixed right-6 xl:right-10 bottom-0 z-40 hidden lg:block">
         <div className="flex flex-col items-center">
           <div className="mb-8">
             <a
