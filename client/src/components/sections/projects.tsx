@@ -15,17 +15,27 @@ export default function Projects() {
 }
 ,
      {
-      title: "RetroSwap Dex",
-      description:
-        "A modern, full-stack decentralized exchange built on Ethereum using Uniswap V3 protocols. RetroSwap enables seamless token swapping and liquidity provision with an intuitive user interface and robust smart contract architecture.",
-      image: "https://gateway.pinata.cloud/ipfs/bafybeiezj74m6pnr4kg6agjqgqxyd5pcymj2w4v56zdpaegfzzqyxcp73e",
-      tags: ["Solidity", "React", "Ether.js", "UniswapV3", "Foundry","Typescript"],
-      alt: "RetroSwap Dex",
-      github: "https://github.com/Aditya-alchemist/Retro-Swap",
-      live: "https://retroswap.netlify.app/"
-    },
-   {
-  title: "Decentralized Messaging App",
+        title: "Decentralized Tokenized Repo System",
+        description:
+          "An end-to-end repo financing protocol built for tokenized U.S. Treasury collateral. The system combines smart contracts, a React frontend, a Python risk engine, and automated monitoring for on-chain lending, settlement, and margin logic.",
+        image: "https://gateway.pinata.cloud/ipfs/bafybeibmf5sw3ki5dt4lpkd74dnwhw52q2ifxyaypylnnxuc4bdlcewy3q",
+        tags: ["Solidity", "Foundry", "React", "Python", "DEFI", "TypeScript"],
+        alt: "Decentralized Tokenized Repo System",
+        github: "https://github.com/Aditya-alchemist/Decentralized-Tokenized-Repo-System",
+        live: null
+      },
+     {
+    title: "Credit Default Swaps",
+    description:
+      "A decentralized CDS protocol for pricing, collateralizing, and settling credit protection positions. It features automated premium collection, margin checks, oracle-driven spreads, a keeper bot, and a React frontend for protocol monitoring.",
+    image: "https://gateway.pinata.cloud/ipfs/bafybeibyz2p2r5ryqtdxzk7gtitkcdawcbp2q7cxejf6tlenzapt3ozjmm",
+    tags: ["Solidity", "TypeScript", "Python", "React", "DEFI", "Foundry"],
+    alt: "Credit Default Swaps",
+    github: "https://github.com/Aditya-alchemist/Credit-Default-Swaps",
+    live: null
+  },
+     {
+    title: "Decentralized Messaging App",
   description:
     "Production-ready decentralized messaging application built on XMTP v3 protocol with Telegram-inspired UI/UX. Features end-to-end encrypted direct messages and group chats using MLS (Messaging Layer Security) protocol, wallet-based authentication with WalletConnect and Coinbase Wallet integration, and decentralized file sharing through Pinata IPFS. Implements push notifications, message persistence, and real-time synchronization across multiple devices. Showcases the future of Web3 communication infrastructure with quantum-resistant encryption and censorship-resistant messaging.",
   image: "https://gateway.pinata.cloud/ipfs/bafkreics4t5lfeyel4djrqmlwcuek2nwjbnott5jxgxu2ygp6meelmuzwa",
@@ -35,16 +45,16 @@ export default function Projects() {
   live: "https://xmtp-telegram.vercel.app/" // Update with your actual deployment
 }
 ,
-    {
-      title: "Decentralized Stablecoin Protocol",
-      description:
-        "The DSC Protocol is an algorithmic, overcollateralized stablecoin system designed to maintain price stability through automated mechanisms. Built with Solidity and tested using Foundry, this protocol implements liquidation mechanisms, collateral management, and price feed integration. The system ensures stability through overcollateralization and automated liquidations when positions become undercollateralized.",
-      image: "https://gateway.pinata.cloud/ipfs/bafkreidxancpklonc4caosg2hqco7vg74dlrlpit4ymbnxvfbafic4s33q",
-      tags: ["Solidity", "DEFI", "Foundry"],
-      alt: "Decentralized Stablecoin Protocol",
-      github: "https://github.com/Aditya-alchemist/Decentralized-Stablecoin-Protocol",
-      live: null
-    }
+      {
+        title: "Decentralized Stablecoin Protocol",
+        description:
+          "The DSC Protocol is an algorithmic, overcollateralized stablecoin system designed to maintain price stability through automated mechanisms. Built with Solidity and tested using Foundry, this protocol implements liquidation mechanisms, collateral management, and price feed integration. The system ensures stability through overcollateralization and automated liquidations when positions become undercollateralized.",
+        image: "https://gateway.pinata.cloud/ipfs/bafkreidxancpklonc4caosg2hqco7vg74dlrlpit4ymbnxvfbafic4s33q",
+        tags: ["Solidity", "DEFI", "Foundry"],
+        alt: "Decentralized Stablecoin Protocol",
+        github: "https://github.com/Aditya-alchemist/Decentralized-Stablecoin-Protocol",
+        live: null
+      }
   ];
 
   const otherProjects = [
@@ -73,22 +83,22 @@ export default function Projects() {
       live: null
     },
     {
-      title: "Custom Uniswap V2",
+      title: "RetroSwap Dex",
       description:
-        "A custom smart contract implementation that interfaces with Uniswap V2 protocol on Ethereum Sepolia testnet, providing simplified token swapping and liquidity provision functionality.",
-      tags: ["Solidity", "Foundry", "Uniswap V2"],
-      github: "https://github.com/Aditya-alchemist/Custom-UniswapV2",
-      live: null
-    },
-    {
-      title: "EduChain",
-      description:
-        "An academic trust platform with teacher and student dashboards, AI-powered assignment integrity checks, attendance and marks workflows, IPFS evidence storage, and blockchain-backed verification for tamper-evident records.",
-      tags: ["React", "TypeScript", "AI", "IPFS", "Solidity"],
-      github: "https://github.com/Aditya-alchemist/EduChain",
-      live: null
+        "A modern, full-stack decentralized exchange built on Ethereum using Uniswap V3 protocols. RetroSwap enables seamless token swapping and liquidity provision with an intuitive user interface and robust smart contract architecture.",
+      tags: ["Solidity", "React", "Ether.js", "UniswapV3", "Foundry", "Typescript"],
+      github: "https://github.com/Aditya-alchemist/Retro-Swap",
+      live: "https://retroswap.netlify.app/"
     },
     
+    {
+      title: "Decentralized Stablecoin Protocol",
+      description:
+        "The DSC Protocol is an algorithmic, overcollateralized stablecoin system designed to maintain price stability through automated mechanisms. Built with Solidity and tested using Foundry, this protocol implements liquidation mechanisms, collateral management, and price feed integration. The system ensures stability through overcollateralization and automated liquidations when positions become undercollateralized.",
+      tags: ["Solidity", "DEFI", "Foundry"],
+      github: "https://github.com/Aditya-alchemist/Decentralized-Stablecoin-Protocol",
+      live: null
+    },
     {
       title: "OmniFinance",
       description:
