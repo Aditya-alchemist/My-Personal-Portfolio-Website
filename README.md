@@ -2,15 +2,6 @@
 
 A modern, full-stack Web3 portfolio showcasing blockchain development expertise with real-time wallet integration and decentralized storage.
 
-## Recent updates (May 10, 2026)
-
-- Archive: added four projects and sorted the archive so 2026 projects render first.
-- Achievements: added "KIIT Fest — Hackathon Winner" (Feb 2026) with EduChain details and trophy icon; marked Research Publications as patented.
-- Featured projects: reordered and expanded summaries. New featured order: 1) Credit Default Swaps (detailed summary), 2) Decentralized Tokenized Repo System (detailed summary), 3) Decentralized Messaging App (XMTP), 4) CEX Arbitrage Bot.
-- Assets: updated IPFS images for Credit Default Swaps and Decentralized Tokenized Repo System (new CIDs added).
-- Cleanup: removed `Custom Uniswap V2` and `EduChain` from other projects per site reorganization.
-
-All edits were committed and pushed to the `main` branch.
 
 
 
