@@ -190,6 +190,42 @@ const archiveProjects = [
     github: "https://github.com/Aditya-alchemist/VeritasChain",
     live: "https://veritas-chain.vercel.app/",
     archived: false
+  },
+  {
+    year: "2026",
+    title: "Decentralized Tokenized Repo System",
+    company: "Personal",
+    builtWith: ["Solidity", "Foundry", "React", "Python", "DeFi", "TypeScript"],
+    github: "https://github.com/Aditya-alchemist/Decentralized-Tokenized-Repo-System",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2026",
+    title: "Crypto Risk Labs v0",
+    company: "Personal",
+    builtWith: ["Python", "FastAPI", "React", "SQLite", "WebSocket", "AI"],
+    github: "https://github.com/Aditya-alchemist/Crypto-Risk-Labs-v0",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2026",
+    title: "Personalized MCP Server",
+    company: "Personal",
+    builtWith: ["Python", "FastMCP", "MCP", "GitHub API", "Web3"],
+    github: "https://github.com/Aditya-alchemist/Personalized-MCP-server",
+    live: null,
+    archived: false
+  },
+  {
+    year: "2026",
+    title: "Credit Default Swaps",
+    company: "Personal",
+    builtWith: ["Solidity", "TypeScript", "Python", "React", "DeFi", "Foundry"],
+    github: "https://github.com/Aditya-alchemist/Credit-Default-Swaps",
+    live: null,
+    archived: false
   }
 ];
 
