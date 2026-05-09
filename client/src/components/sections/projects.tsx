@@ -3,39 +3,28 @@ import { Link } from "wouter";
 
 export default function Projects() {
   const featuredProjects = [
-   {
-  title: "CEX Arbitrage Bot",
-  description:
-    "Automated cryptocurrency arbitrage trading bot that monitors real-time price spreads across multiple centralized exchanges (Binance, OKX, KuCoin). The bot identifies profitable arbitrage opportunities by comparing asset prices, calculates transaction costs including fees and slippage, and executes rapid buy-sell cycles to capture profit margins. Built with WebSocket connections for live market data streaming and REST APIs for trade execution, demonstrating advanced understanding of market microstructure and algorithmic trading strategies.",
-  image: "https://gateway.pinata.cloud/ipfs/bafkreibwhl2u5ih4c5qn7otroreh5syguugvbbei6z22i4wskliymgi2ra",
-  tags: ["Node.js", "WebSocket", "Binance API", "Trading Bot", "REST API"],
-  alt: "CEX Arbitrage Bot",
-  github: "https://github.com/Aditya-alchemist/Centralized-Arbitrage-bot",
-  live: null
-}
-,
-     {
-        title: "Decentralized Tokenized Repo System",
-        description:
-          "An end-to-end repo financing protocol built for tokenized U.S. Treasury collateral. The system combines smart contracts, a React frontend, a Python risk engine, and automated monitoring for on-chain lending, settlement, and margin logic.",
-        image: "https://gateway.pinata.cloud/ipfs/bafybeibmf5sw3ki5dt4lpkd74dnwhw52q2ifxyaypylnnxuc4bdlcewy3q",
-        tags: ["Solidity", "Foundry", "React", "Python", "DEFI", "TypeScript"],
-        alt: "Decentralized Tokenized Repo System",
-        github: "https://github.com/Aditya-alchemist/Decentralized-Tokenized-Repo-System",
-        live: null
-      },
-     {
-    title: "Credit Default Swaps",
-    description:
-      "A decentralized CDS protocol for pricing, collateralizing, and settling credit protection positions. It features automated premium collection, margin checks, oracle-driven spreads, a keeper bot, and a React frontend for protocol monitoring.",
-    image: "https://gateway.pinata.cloud/ipfs/bafybeibyz2p2r5ryqtdxzk7gtitkcdawcbp2q7cxejf6tlenzapt3ozjmm",
-    tags: ["Solidity", "TypeScript", "Python", "React", "DEFI", "Foundry"],
-    alt: "Credit Default Swaps",
-    github: "https://github.com/Aditya-alchemist/Credit-Default-Swaps",
-    live: null
-  },
-     {
-    title: "Decentralized Messaging App",
+    {
+      title: "Credit Default Swaps",
+      description:
+        "Credit Default Swaps (CDS) Protocol — a comprehensive DeFi derivatives platform enabling on-chain credit protection. The stack includes audited Solidity contracts for position management, a PremiumEngine for scheduled premium collection, a MarginEngine for automated margin monitoring and liquidations, an oracle layer for entity spreads, a Python keeper bot that enforces health checks and executes automated maintenance, and a React dashboard for monitoring positions, spreads, and settlements. Designed for institutional-style workflows with batch settlement, gas-efficient primitives, and robust test coverage.",
+      image: "https://gateway.pinata.cloud/ipfs/bafybeibyz2p2r5ryqtdxzk7gtitkcdawcbp2q7cxejf6tlenzapt3ozjmm",
+      tags: ["Solidity", "TypeScript", "Python", "React", "DEFI", "Foundry"],
+      alt: "Credit Default Swaps",
+      github: "https://github.com/Aditya-alchemist/Credit-Default-Swaps",
+      live: null
+    },
+    {
+      title: "Decentralized Tokenized Repo System",
+      description:
+        "Tokenized Repo System — an institutional-style on-chain repurchase agreement protocol that tokenizes U.S. Treasury Bills as collateral (tTBILL) and issues loan tokens against them. Features include atomic DVP settlement, a MarginEngine with deterministic LTV monitoring, a RepoVault for collateral management, a frontend UX for lending/borrowing and portfolio tracking, and a risk engine that computes haircuts, VaR-style stress tests, and keeper automation. Built with Solidity (ERC1400-like tokenized assets), Foundry tests, a React frontend, and a Python quant/risk engine.",
+      image: "https://gateway.pinata.cloud/ipfs/bafybeibmf5sw3ki5dt4lpkd74dnwhw52q2ifxyaypylnnxuc4bdlcewy3q",
+      tags: ["Solidity", "Foundry", "React", "Python", "DEFI", "TypeScript"],
+      alt: "Decentralized Tokenized Repo System",
+      github: "https://github.com/Aditya-alchemist/Decentralized-Tokenized-Repo-System",
+      live: null
+    },
+    {
+      title: "Decentralized Messaging App",
   description:
     "Production-ready decentralized messaging application built on XMTP v3 protocol with Telegram-inspired UI/UX. Features end-to-end encrypted direct messages and group chats using MLS (Messaging Layer Security) protocol, wallet-based authentication with WalletConnect and Coinbase Wallet integration, and decentralized file sharing through Pinata IPFS. Implements push notifications, message persistence, and real-time synchronization across multiple devices. Showcases the future of Web3 communication infrastructure with quantum-resistant encryption and censorship-resistant messaging.",
   image: "https://gateway.pinata.cloud/ipfs/bafkreics4t5lfeyel4djrqmlwcuek2nwjbnott5jxgxu2ygp6meelmuzwa",
@@ -45,16 +34,16 @@ export default function Projects() {
   live: "https://xmtp-telegram.vercel.app/" // Update with your actual deployment
 }
 ,
-      {
-        title: "Decentralized Stablecoin Protocol",
-        description:
-          "The DSC Protocol is an algorithmic, overcollateralized stablecoin system designed to maintain price stability through automated mechanisms. Built with Solidity and tested using Foundry, this protocol implements liquidation mechanisms, collateral management, and price feed integration. The system ensures stability through overcollateralization and automated liquidations when positions become undercollateralized.",
-        image: "https://gateway.pinata.cloud/ipfs/bafkreidxancpklonc4caosg2hqco7vg74dlrlpit4ymbnxvfbafic4s33q",
-        tags: ["Solidity", "DEFI", "Foundry"],
-        alt: "Decentralized Stablecoin Protocol",
-        github: "https://github.com/Aditya-alchemist/Decentralized-Stablecoin-Protocol",
-        live: null
-      }
+    {
+      title: "CEX Arbitrage Bot",
+      description:
+        "Automated cryptocurrency arbitrage trading bot that monitors real-time price spreads across multiple centralized exchanges (Binance, OKX, KuCoin). The bot identifies profitable arbitrage opportunities by comparing asset prices, calculates transaction costs including fees and slippage, and executes rapid buy-sell cycles to capture profit margins. Built with WebSocket connections for live market data streaming and REST APIs for trade execution, demonstrating advanced understanding of market microstructure and algorithmic trading strategies.",
+      image: "https://gateway.pinata.cloud/ipfs/bafkreibwhl2u5ih4c5qn7otroreh5syguugvbbei6z22i4wskliymgi2ra",
+      tags: ["Node.js", "WebSocket", "Binance API", "Trading Bot", "REST API"],
+      alt: "CEX Arbitrage Bot",
+      github: "https://github.com/Aditya-alchemist/Centralized-Arbitrage-bot",
+      live: null
+    }
   ];
 
   const otherProjects = [

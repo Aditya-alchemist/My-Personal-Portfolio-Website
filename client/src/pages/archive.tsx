@@ -230,6 +230,11 @@ const archiveProjects = [
 ];
 
 export default function Archive() {
+  const sortedArchive = [...archiveProjects].sort((a, b) => {
+    const ay = parseInt(String(a.year)) || 0;
+    const by = parseInt(String(b.year)) || 0;
+    return by - ay;
+  });
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Back Button */}
@@ -330,7 +335,7 @@ export default function Archive() {
                 </tr>
               </thead>
               <tbody>
-                {archiveProjects.map((project, index) => (
+                {sortedArchive.map((project, index) => (
                   <motion.tr
                     key={index}
                     className="border-b border-gray-800/50 hover:bg-gray-900/20 transition-colors"
