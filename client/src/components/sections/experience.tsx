@@ -26,7 +26,6 @@ export default function Experience() {
       company: "BNY",
       period: "May 2026 - Jul 2026",
       achievements: [
-        "Pune City, Maharashtra, India · On-site",
         "Focused on Digital Assets, contributing to the onboarding and integration of USDC on Ethereum and Solana within enterprise financial systems",
         "Developed and enhanced backend services using Spring Boot and frontend features with Angular",
         "Built and integrated multiple REST APIs for scalable enterprise applications",
