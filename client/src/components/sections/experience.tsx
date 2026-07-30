@@ -22,6 +22,20 @@ export default function Experience() {
 
   const experiences = [
     {
+      title: "Software Engineer Intern",
+      company: "BNY",
+      period: "May 2026 - Jul 2026",
+      achievements: [
+        "Pune City, Maharashtra, India · On-site",
+        "Focused on Digital Assets, contributing to the onboarding and integration of USDC on Ethereum and Solana within enterprise financial systems",
+        "Developed and enhanced backend services using Spring Boot and frontend features with Angular",
+        "Built and integrated multiple REST APIs for scalable enterprise applications",
+        "Developed 5+ MCP tools, all deployed to production and actively used",
+        "Authored 4,000+ unit tests, improving code quality, reliability, and test coverage",
+        "Optimized the CI/CD pipeline, reducing pipeline execution time from 25 minutes to 10 minutes",
+      ],
+    },
+    {
   title: "Product Intern",
   company: "XO Market",
   period: "2025 August - 2025 October",
