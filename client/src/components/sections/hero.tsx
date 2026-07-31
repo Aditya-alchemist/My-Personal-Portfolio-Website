@@ -131,7 +131,7 @@ export default function Hero() {
             View My Work
           </Button>
           <a
-            href="https://drive.google.com/file/d/1ihh8KAe7njejV_AvwpGJFHfY8kISDkFm/view?usp=sharing"
+            href="https://drive.google.com/file/d/1PpwB4ah5nebEXkD8CEZ1SljreY7t0cup/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto"
